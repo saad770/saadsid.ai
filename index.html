@@ -15,21 +15,22 @@
 <style>
 /* ──────────────────────────────────────────────────────
    Saad Siddique — editorial personal site
-   Palette: warm paper · near-black · single navy accent
+   Palette: cool paper · deep navy ink · royal-blue accent
    No gradients. No rainbow. Restrained.
    ────────────────────────────────────────────────────── */
 :root{
-  --paper:#FAFAF7;
-  --paper-2:#F4F2EC;
-  --ink:#111111;
-  --ink-2:#1F1F1F;
-  --muted:#6B6B66;
-  --muted-2:#9A9A93;
-  --rule:#E5E3DC;
-  --rule-2:#D6D3CA;
+  --paper:#F5F8FC;        /* very pale blue paper */
+  --paper-2:#EAF0F8;
+  --ink:#0F172A;          /* deep navy, not pure black */
+  --ink-2:#1E293B;
+  --muted:#475569;
+  --muted-2:#7B8AA3;
+  --rule:#D8E1EE;
+  --rule-2:#B9C7DC;
   --navy:#0A1628;
-  --accent:#1E3A5F;     /* deep slate blue — the only color */
-  --accent-2:#2C5282;
+  --accent:#1E40AF;       /* royal blue — the only color */
+  --accent-2:#1D4ED8;
+  --accent-soft:rgba(30,64,175,.10);
   --max:680px;
   --max-wide:880px;
   --serif:'Charter','Iowan Old Style','Source Serif Pro','Sitka Text',Georgia,Cambria,'Times New Roman',serif;
@@ -47,10 +48,11 @@ body{
   font-feature-settings:'kern','liga','onum';
 }
 a{color:var(--accent); text-decoration:underline; text-decoration-thickness:1px;
-  text-underline-offset:2px; text-decoration-color:rgba(30,58,95,.35);
+  text-underline-offset:2px; text-decoration-color:rgba(30,64,175,.35);
   transition:text-decoration-color .15s,color .15s;
 }
 a:hover{text-decoration-color:var(--accent); color:var(--accent-2)}
+::selection{background:var(--accent-soft); color:var(--ink)}
 
 /* ── NAV ─────────────────────────────────────────── */
 .nav{
@@ -109,7 +111,10 @@ p{margin-bottom:1.1rem; color:var(--ink-2)}
   font-family:var(--serif); font-weight:700; font-size:2.1rem;
   letter-spacing:-.02em;
   flex-shrink:0;
-  border:1px solid rgba(0,0,0,.06);
+  box-shadow:
+    0 0 0 1px rgba(15,23,42,.06),
+    0 0 0 5px rgba(30,64,175,.08),
+    0 2px 10px rgba(30,64,175,.12);
 }
 .profile h1{margin-bottom:.3rem}
 .profile-role{
@@ -232,7 +237,7 @@ footer .copy{margin-top:.85rem; color:var(--muted-2); font-size:.72rem}
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#writing">Writing</a>
-      <a href="https://github.com/saad770" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:saad@saadsid.ai">Contact</a>
     </div>
   </div>
 </nav>
@@ -259,7 +264,6 @@ footer .copy{margin-top:.85rem; color:var(--muted-2); font-size:.72rem}
 
     <div class="socials">
       <a href="https://www.linkedin.com/in/saad-siddique770/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/saad770" target="_blank" rel="noopener">GitHub</a>
       <a href="mailto:saad@saadsid.ai">Email</a>
     </div>
   </section>
@@ -340,7 +344,6 @@ footer .copy{margin-top:.85rem; color:var(--muted-2); font-size:.72rem}
 <footer>
   <div class="links">
     <a href="https://www.linkedin.com/in/saad-siddique770/" target="_blank" rel="noopener">LinkedIn</a>·
-    <a href="https://github.com/saad770" target="_blank" rel="noopener">GitHub</a>·
     <a href="mailto:saad@saadsid.ai">Email</a>
   </div>
   <div class="copy">© 2026 Saad Siddique · Austin, Texas</div>
