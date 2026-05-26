@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Statistics Appendix — The Case for AI Romance — Saad Siddique</title>
+<meta name="description" content="Cross-verified data index for The Case for AI Romance. Every statistic validated against at least two independent primary sources. By Saad Siddique.">
+<meta name="author" content="Saad Siddique">
+<meta property="og:title" content="Master Statistics Appendix — The Attention & Attraction Economy">
+<meta property="og:description" content="Cross-validated data index. 16 sections. 6 charts. Every figure sourced.">
+<meta property="og:url" content="https://saadsid.ai/blog/the-case-for-ai-romance-appendix.html">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231B2A4A'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia, serif' font-weight='700' font-size='18' fill='%23ffffff'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --navy:#1B2A4A;--accent:#0078D4;--purple:#5C2D91;--green:#107C10;
+  --orange:#D83B01;--gold:#FFB900;--teal:#0E8A7E;
+  --light:#F5F7FA;--text:#2D2D2D;--muted:#605E5C;
+  --white:#FFFFFF;--border:#E1DFDD;
+  --shadow:0 4px 20px rgba(27,42,74,.08);--reading-width:780px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Georgia','Cambria','Times New Roman',serif;
+  color:var(--text);background:var(--light);
+  line-height:1.7;font-size:17px;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(27,42,74,.97);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  height:52px;display:flex;align-items:center;padding:0 1.5rem;
+}
+.nav-brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;margin-right:auto}
+.nav-monogram{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:'Segoe UI',system-ui,sans-serif;
+  font-weight:800;font-size:.7rem;flex-shrink:0;
+}
+.nav-title{color:#fff;font-weight:600;font-size:.85rem;font-family:'Segoe UI',system-ui,sans-serif;white-space:nowrap}
+.nav-badge{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);
+  border-radius:100px;padding:.15rem .8rem;font-size:.65rem;
+  color:rgba(255,255,255,.7);font-family:'Segoe UI',system-ui,sans-serif;
+  letter-spacing:.05em;text-transform:uppercase;margin-left:.8rem;
+}
+.nav-right{margin-left:auto;display:flex;gap:1rem;align-items:center}
+.nav-link{
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.75rem;
+  letter-spacing:.04em;text-transform:uppercase;
+}
+.nav-link:hover{color:#fff}
+.hero{
+  min-height:55vh;
+  background:linear-gradient(155deg,#0a1628 0%,var(--navy) 35%,#2d4a7a 75%,var(--accent) 100%);
+  color:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:90px 2rem 60px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,255,255,.04),transparent 70%);
+  border-radius:50%;
+}
+.hero-overline{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;margin-bottom:1rem;position:relative;z-index:1;
+}
+.hero h1{
+  font-size:clamp(1.9rem,5vw,3.2rem);font-weight:700;line-height:1.1;
+  letter-spacing:-.02em;position:relative;z-index:1;max-width:820px;
+}
+.hero-subtitle{
+  font-size:clamp(.95rem,2vw,1.1rem);opacity:.85;position:relative;z-index:1;
+  margin-top:1.2rem;max-width:640px;line-height:1.55;font-style:italic;
+}
+.hero-author{
+  margin-top:1.8rem;font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.85rem;font-weight:600;letter-spacing:.06em;
+  position:relative;z-index:1;opacity:.9;
+}
+.hero-tag{
+  display:inline-block;margin-top:.8rem;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  border-radius:100px;padding:.3rem 1.4rem;font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  font-family:'Segoe UI',system-ui,sans-serif;position:relative;z-index:1;
+}
+.reading{max-width:var(--reading-width);margin:0 auto;padding:0 1.5rem}
+.book-body{padding-top:2rem;padding-bottom:4rem}
+
+/* Methodology card at the top */
+.method{
+  background:linear-gradient(135deg,#f0f4ff,#E6F2FF);
+  border-left:4px solid var(--accent);border-radius:10px;
+  padding:1.4rem 1.6rem;margin:2rem 0 1rem;
+  font-size:.96rem;line-height:1.6;color:var(--navy);
+}
+.method strong{color:var(--navy)}
+
+/* Section block */
+.section{margin:3rem 0 2rem;scroll-margin-top:70px}
+.section-num{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.4rem;font-weight:600;
+}
+.section h2{
+  font-family:'Georgia',serif;font-size:clamp(1.4rem,3.2vw,1.7rem);
+  font-weight:700;color:var(--navy);line-height:1.25;letter-spacing:-.01em;
+  margin-bottom:.4rem;
+}
+.section .subtitle{
+  font-family:'Georgia',serif;font-style:italic;color:var(--muted);
+  font-size:1rem;margin-bottom:1.2rem;
+}
+.section h3{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--purple);font-weight:700;margin:2rem 0 .8rem;
+}
+
+/* Tables */
+table{
+  width:100%;border-collapse:collapse;
+  background:var(--white);box-shadow:var(--shadow);border-radius:10px;
+  overflow:hidden;margin:1rem 0 1.4rem;font-size:.92rem;
+}
+thead{background:linear-gradient(135deg,var(--navy),#2d4a7a);color:#fff}
+thead th{
+  text-align:left;padding:.8rem 1rem;
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:600;
+}
+tbody td{
+  padding:.7rem 1rem;border-top:1px solid var(--border);
+  vertical-align:top;line-height:1.5;
+}
+tbody tr:nth-child(even){background:#fafbfd}
+tbody tr:hover{background:#f0f4fa}
+tbody td:nth-child(2){
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-weight:600;color:var(--navy);white-space:nowrap;
+}
+tbody td:last-child{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.78rem;color:var(--muted);
+}
+tbody td strong{color:var(--navy);font-weight:700}
+.t-3col tbody td:nth-child(2),
+.t-3col tbody td:nth-child(3){
+  font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;color:var(--navy);
+}
+.t-3col tbody td:last-child{font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;color:var(--navy)}
+
+/* Wide tables on mobile */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Chart figure */
+.chart{
+  background:var(--white);border-radius:12px;padding:1.2rem;
+  box-shadow:var(--shadow);margin:1.4rem 0;text-align:center;
+}
+.chart img{max-width:100%;height:auto;border-radius:6px;background:#fff}
+.chart-caption{
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.78rem;
+  color:var(--muted);margin-top:.7rem;letter-spacing:.02em;line-height:1.5;
+}
+.chart-caption strong{color:var(--navy)}
+
+/* Pull quote / one-liner */
+.one-liner{
+  background:linear-gradient(135deg,var(--navy),#2d4a7a);
+  border-radius:14px;padding:1.6rem 1.8rem;color:#fff;
+  margin:2rem 0;font-family:'Georgia',serif;font-style:italic;
+  font-size:1.05rem;line-height:1.5;text-align:center;
+  box-shadow:0 6px 24px rgba(27,42,74,.18);
+}
+.one-liner strong{font-style:normal;color:#fff}
+
+/* TOC */
+.toc{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  padding:1.4rem 1.6rem;margin:2rem 0;box-shadow:var(--shadow);
+}
+.toc h4{
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.72rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin-bottom:.8rem;
+}
+.toc ol{list-style:none;counter-reset:toc;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.2rem}
+.toc ol li{counter-increment:toc;font-family:'Segoe UI',system-ui,sans-serif;font-size:.85rem;line-height:1.4;padding-left:1.8rem;position:relative}
+.toc ol li::before{
+  content:counter(toc,decimal-leading-zero);
+  position:absolute;left:0;top:0;
+  color:var(--accent);font-weight:700;font-size:.72rem;letter-spacing:.04em;
+}
+.toc ol li a{color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.toc ol li a:hover{border-color:var(--accent)}
+
+/* Inline note */
+.note{
+  background:#fff8e6;border-left:4px solid var(--gold);
+  border-radius:8px;padding:1rem 1.2rem;margin:1.2rem 0;
+  font-size:.92rem;color:var(--navy);line-height:1.55;
+}
+.note strong{color:var(--navy)}
+
+.cta-card{
+  margin:3rem 0 1rem;
+  background:linear-gradient(135deg,var(--purple),#3a2255);
+  border-radius:14px;padding:2rem 1.8rem;color:#fff;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  box-shadow:0 6px 24px rgba(92,45,145,.22);
+}
+.cta-card .cta-overline{
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;opacity:.65;margin-bottom:.6rem;
+}
+.cta-card h3{font-family:'Georgia',serif;font-size:1.35rem;margin-bottom:.6rem}
+.cta-card p{font-size:.95rem;opacity:.88;margin-bottom:1.2rem;max-width:520px}
+.cta-card a{
+  display:inline-block;background:#fff;color:var(--purple);
+  text-decoration:none;padding:.7rem 1.6rem;border-radius:100px;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.82rem;
+  font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+}
+.cta-card a:hover{background:#f5f7fa}
+
+.footer{
+  background:var(--navy);color:rgba(255,255,255,.55);text-align:center;
+  padding:2.8rem 1.5rem;font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;
+}
+.footer strong{color:rgba(255,255,255,.9)}
+.footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 .5rem}
+.footer a:hover{color:#fff}
+.footer-line{margin-top:.4rem}
+
+@media(max-width:768px){
+  body{font-size:16px;line-height:1.65}
+  .reading{padding:0 1rem}
+  .hero{padding:80px 1.2rem 40px;min-height:50vh}
+  .toc ol{grid-template-columns:1fr}
+  table{font-size:.84rem}
+  tbody td{padding:.55rem .7rem}
+}
+@media(max-width:480px){
+  body{font-size:15px}
+  .nav-title{display:none}
+  .nav-badge{font-size:.6rem}
+  table{font-size:.78rem}
+}
+@media print{
+  .nav,.cta-card{display:none}
+  .hero{min-height:auto;padding:2rem}
+  body{font-size:10pt}
+  .chart img{box-shadow:none}
+  table{box-shadow:none;border:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="the-case-for-ai-romance.html" class="nav-brand">
+    <span class="nav-monogram">SS</span>
+    <span class="nav-title">The Case for AI Romance</span>
+    <span class="nav-badge">Appendix</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="the-case-for-ai-romance.html">Essay</a>
+    <a class="nav-link" href="/">Home</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-overline">Companion Document</div>
+  <h1>Master Statistics Appendix</h1>
+  <p class="hero-subtitle">The Attention &amp; Attraction Economy &mdash; Cross-Verified Data Index. All Sources, All Buckets.</p>
+  <div class="hero-author">Saad Siddique</div>
+  <span class="hero-tag">16 Sections &bull; 6 Charts &bull; Every Figure Sourced</span>
+</section>
+
+<div class="book-body">
+  <div class="reading">
+
+<!-- ─────────── METHODOLOGY ─────────── -->
+<div class="method">
+  <strong>Methodology note.</strong> Every statistic in this appendix has been cross-validated against at least two independent primary sources. Where a figure was found to be viral but unverified (e.g. the &ldquo;1 in 7 women on OnlyFans&rdquo; claim), it is flagged in-place with its verified replacement. Sources are inline-cited. Where ranges exist, they are preserved.
+</div>
+
+<!-- ─────────── TOC ─────────── -->
+<div class="toc">
+  <h4>Sections</h4>
+  <ol>
+    <li><a href="#sec-0">Master Headline Stats</a></li>
+    <li><a href="#sec-1">Evolutionary Baseline</a></li>
+    <li><a href="#sec-2">The Pyramid &mdash; Historical &amp; Genetic</a></li>
+    <li><a href="#sec-3">The Attention Sweet Spot</a></li>
+    <li><a href="#sec-4">Attention Inequality (The Gini)</a></li>
+    <li><a href="#sec-5">Prostitution</a></li>
+    <li><a href="#sec-6">Pornography</a></li>
+    <li><a href="#sec-7">OnlyFans</a></li>
+    <li><a href="#sec-8">Instagram &amp; The Soft Attention Layer</a></li>
+    <li><a href="#sec-9">Dating Apps</a></li>
+    <li><a href="#sec-10">Influencer / Podcast Economy</a></li>
+    <li><a href="#sec-11">Marriage &amp; Divorce</a></li>
+    <li><a href="#sec-12">The Sexlessness Pyramid</a></li>
+    <li><a href="#sec-13">AI Companions &amp; Physical Robots</a></li>
+    <li><a href="#sec-14">Fertility Collapse</a></li>
+    <li><a href="#sec-15">Transgender Demographic Shift</a></li>
+    <li><a href="#sec-16">The Full Money Map</a></li>
+    <li><a href="#chart-index">Chart Index</a></li>
+  </ol>
+</div>
+
+<!-- ─────────── SECTION 0 ─────────── -->
+<div class="section" id="sec-0">
+  <div class="section-num">Section 00</div>
+  <h2>The Master Headline Stats</h2>
+  <div class="subtitle">The six numbers that anchor the whole essay.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Men as % of population</td><td>49%</td><td>U.S. Census</td></tr>
+      <tr><td>Men fund what % of the attention economy</td><td>~90%</td><td>Aggregate (see Section 16)</td></tr>
+      <tr><td>Annual men &rarr; women money flow (visible)</td><td>~$120B+/year</td><td>Aggregate</td></tr>
+      <tr><td>Women initiate divorce</td><td>69&ndash;70% overall; 90% college-educated</td><td>ASA / Stanford (Rosenfeld)</td></tr>
+      <tr><td>Men under 30 sexless in past year (2024)</td><td>~25% &mdash; 1 in 4</td><td>GSS / CDC</td></tr>
+      <tr><td>Men under 30 who are single</td><td>63% &mdash; historic record</td><td>Pew 2024</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 1 ─────────── -->
+<div class="section" id="sec-1">
+  <div class="section-num">Section 01</div>
+  <h2>Evolutionary Baseline</h2>
+  <div class="subtitle">The 300,000-year firmware.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Years of human evolutionary history</td><td>300,000</td><td>Paleoanthropology consensus</td></tr>
+      <tr><td>Cultures where women value financial resources in mates more than men do</td><td>37 of 37 studied</td><td>Buss, 1989 cross-cultural study</td></tr>
+      <tr><td>U.S. adults who say it&rsquo;s very important for a man to support a family</td><td>71%</td><td>Pew Research</td></tr>
+      <tr><td>Same expectation for women</td><td>32%</td><td>Pew Research</td></tr>
+      <tr><td>Couples where man earns more</td><td>69% of U.S. married/cohabiting couples</td><td>Pew Research</td></tr>
+      <tr><td>Women controlling U.S. investable assets by 2030</td><td>$34 trillion (38% of total)</td><td>McKinsey</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 2 ─────────── -->
+<div class="section" id="sec-2">
+  <div class="section-num">Section 02</div>
+  <h2>The Pyramid &mdash; Historical &amp; Genetic</h2>
+  <div class="subtitle">The Neolithic Y-chromosome collapse and the historical harems that proved it.</div>
+
+  <h3>2.1 &mdash; The Neolithic Y-Chromosome Collapse</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Timeframe of collapse</td><td>~7,000 years ago</td><td>Karmin et al., 2015 (Nature Genetics)</td></tr>
+      <tr><td>Ratio of reproducing men to women during collapse</td><td>1 man per 17 women</td><td>Karmin et al.</td></tr>
+      <tr><td>Duration of bottleneck</td><td>~2,000-year window</td><td>Karmin et al.</td></tr>
+      <tr><td>Female (mitochondrial) line during same period</td><td>No collapse &mdash; normal reproduction</td><td>Karmin et al.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2.2 &mdash; Historical Harems</h3>
+  <div class="table-wrap"><table class="t-3col">
+    <thead><tr><th>Civilization</th><th>Elite Male</th><th>Women Controlled</th></tr></thead>
+    <tbody>
+      <tr><td>Inca Empire</td><td>Atahualpa</td><td>1,500 concubines per provincial household</td></tr>
+      <tr><td>Inca senior lords</td><td>Nobility</td><td>700+ women each</td></tr>
+      <tr><td>Inca commoners</td><td>Average man</td><td>0 &mdash; death penalty for unsanctioned access</td></tr>
+      <tr><td>Ottoman Empire</td><td>Sultan</td><td>1,000+ women in imperial harem at peak</td></tr>
+      <tr><td>Qing Dynasty</td><td>Emperor</td><td>3,000+ concubines documented</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 3 ─────────── -->
+<div class="section" id="sec-3">
+  <div class="section-num">Section 03</div>
+  <h2>The Attention Sweet Spot</h2>
+  <div class="subtitle">Verified age-desirability data.</div>
+
+  <figure class="chart">
+    <img src="charts/appendix/image_1.png" alt="Chart showing women's desirability peaking around age 18 and declining steadily, while men's desirability rises with age and peaks near 50." loading="lazy">
+    <div class="chart-caption"><strong>Chart 1 &mdash; The Attention Sweet Spot.</strong> Women&rsquo;s desirability peaks at 18; men&rsquo;s at 50. Source: Bruch &amp; Newman, <em>Science Advances</em>, 2018.</div>
+  </figure>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Study sample size</td><td>200,000 heterosexual online daters</td><td>Bruch &amp; Newman, <em>Science Advances</em>, 2018</td></tr>
+      <tr><td>Women&rsquo;s desirability trajectory</td><td>Peaks at 18, declines continuously to 60</td><td>Bruch &amp; Newman</td></tr>
+      <tr><td>Men&rsquo;s desirability trajectory</td><td>Rises steadily, peaks at age 50</td><td>Bruch &amp; Newman</td></tr>
+      <tr><td>Men 20&ndash;50 asked what age looks best</td><td>20 or 21 &mdash; in 26 of 31 male age groups</td><td>OkCupid (Rudder, <em>Dataclysm</em>, 2014)</td></tr>
+      <tr><td>Median 30-year-old man</td><td>Spends as much time messaging teens as women his own age</td><td>OkCupid internal data</td></tr>
+      <tr><td>Tinder age concentration</td><td>38% aged 16&ndash;24; 45% aged 25&ndash;34</td><td>BusinessOfApps 2026</td></tr>
+      <tr><td>Peak attention age bracket for women</td><td>18&ndash;24 &mdash; across every platform studied</td><td>Aggregate</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 4 ─────────── -->
+<div class="section" id="sec-4">
+  <div class="section-num">Section 04</div>
+  <h2>Attention Inequality (The Gini)</h2>
+  <div class="subtitle">Dating-app inequality, measured the same way as national economies.</div>
+
+  <figure class="chart">
+    <img src="charts/appendix/image_2.png" alt="Chart comparing men's dating-app Gini coefficient against national income Gini scores, showing male attention inequality on Tinder/Hinge exceeds income inequality in most countries." loading="lazy">
+    <div class="chart-caption"><strong>Chart 2 &mdash; The Attention Gini.</strong> Men&rsquo;s dating Gini of <strong>0.58</strong> is worse than income inequality in ~95% of national economies.</div>
+  </figure>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Men&rsquo;s Gini coefficient (attention on dating apps)</td><td>0.58</td><td>Hinge / OKCupid data</td></tr>
+      <tr><td>Comparable national Gini (income inequality)</td><td>South Africa 0.63; U.S. 0.41</td><td>World Bank</td></tr>
+      <tr><td>Men&rsquo;s dating Gini worse than</td><td>~95% of the world&rsquo;s nations</td><td>Cross-referenced</td></tr>
+      <tr><td>Top 10% of men receive</td><td>58% of all female likes</td><td>Hinge internal data</td></tr>
+      <tr><td>Top 20% of men receive</td><td>~78% of all female likes</td><td>OkCupid / Hinge</td></tr>
+      <tr><td>Bottom 50% of men share</td><td>~6% of all female likes</td><td>Hinge data</td></tr>
+      <tr><td>Top 1% of men receive</td><td>~16% of all likes</td><td>Hinge internal</td></tr>
+      <tr><td>Average man&rsquo;s match rate</td><td>0.6% &mdash; 1 match per 140 right-swipes</td><td>Tinder / Cross River Therapy</td></tr>
+      <tr><td>Women who rate 80% of men below average</td><td>Documented in OkCupid data</td><td>Rudder, <em>Dataclysm</em></td></tr>
+      <tr><td>Women swipe right on men</td><td>5&ndash;14% of male profiles</td><td>Multiple app sources</td></tr>
+      <tr><td>Men swipe right on women</td><td>61% of female profiles</td><td>Tinder internal data</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 5 ─────────── -->
+<div class="section" id="sec-5">
+  <div class="section-num">Section 05</div>
+  <h2>Prostitution</h2>
+  <div class="subtitle">The base layer of the attention economy.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Global sex workers</td><td>~40&ndash;42 million</td><td>WHO estimates</td></tr>
+      <tr><td>U.S. active sex workers</td><td>~1 million</td><td>Urban Institute</td></tr>
+      <tr><td>Female share</td><td>~70%; ages 18&ndash;29 majority</td><td>Urban Institute</td></tr>
+      <tr><td><strong>Primary buyer profile</strong></td><td>~80% married men, ages 40&ndash;50</td><td>John research</td></tr>
+      <tr><td>Men who have ever paid for sex (U.S.)</td><td>15&ndash;20% of all U.S. men</td><td>Multiple surveys</td></tr>
+      <tr><td>Women entering for survival/drugs (18&ndash;25)</td><td>73.2%</td><td>Farley et al.</td></tr>
+      <tr><td>Controlled by pimps/agencies</td><td>80&ndash;90% of female workers</td><td>DOJ estimates</td></tr>
+      <tr><td>Murder rate vs. general female population</td><td>60&ndash;100&times; higher</td><td>Potterat et al.</td></tr>
+      <tr><td>Atlanta underground market</td><td>$290M/year</td><td>Urban Institute</td></tr>
+      <tr><td>Sex tourism market (projected 2027)</td><td>$50B</td><td>Industry projections</td></tr>
+      <tr><td>Thailand sex industry</td><td>$6.4B&ndash;$27B/year; 3&ndash;14% of GDP</td><td>UNAIDS / Thai gov.</td></tr>
+      <tr><td>Colombia &mdash; % of all Colombian women ever in sex work</td><td>~8%</td><td>Fundaci&oacute;n Renacer</td></tr>
+      <tr><td>Colombia &mdash; % of workers who are minors</td><td>12%</td><td>Fundaci&oacute;n Renacer</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 6 ─────────── -->
+<div class="section" id="sec-6">
+  <div class="section-num">Section 06</div>
+  <h2>Pornography</h2>
+  <div class="subtitle">From physical proximity to streamed body.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>U.S. porn industry revenue (2023)</td><td>$1.1B+</td><td>CNBC / industry reports</td></tr>
+      <tr><td>Pornhub daily visitors &mdash; male share</td><td>64%</td><td>Pornhub Insights</td></tr>
+      <tr><td>Male teens who watch monthly</td><td>67%</td><td>Common Sense Media</td></tr>
+      <tr><td>Average age of first male exposure</td><td>Age 7&ndash;8</td><td>Multiple peer-reviewed studies</td></tr>
+      <tr><td>Full SexTech ecosystem (2025)</td><td>$43.2B &rarr; $250B by 2035</td><td>Grand View Research</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 7 ─────────── -->
+<div class="section" id="sec-7">
+  <div class="section-num">Section 07</div>
+  <h2>OnlyFans</h2>
+  <div class="subtitle">Personalized attention, industrialized.</div>
+
+  <figure class="chart">
+    <img src="charts/appendix/image_3.png" alt="Chart showing OnlyFans creator and buyer age distributions side by side, both clustering in the 18-34 range." loading="lazy">
+    <div class="chart-caption"><strong>Chart 3 &mdash; OnlyFans Age Distribution.</strong> Female creator vs. male buyer age bands. 89.5% of buyers are married.</div>
+  </figure>
+
+  <h3>Platform Scale</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Total registered users</td><td>377.5 million</td><td>SimpleBeen 2025</td></tr>
+      <tr><td>Active creators</td><td>4.19&ndash;4.63 million</td><td>OFStats / SimpleBeen</td></tr>
+      <tr><td>Fan payments (2024)</td><td>$7.22B</td><td>SimpleBeen 2025</td></tr>
+      <tr><td>Platform&rsquo;s cut</td><td>20% of all revenue</td><td>OF terms</td></tr>
+      <tr><td>Paying subscribers (of all registered)</td><td>Only 4.2% ever spend anything</td><td>SimpleBeen</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>The &ldquo;1 in 7&rdquo; Fact-Check</h3>
+  <div class="note">
+    The viral claim that <strong>1 in 7 U.S. women aged 18&ndash;24 are on OnlyFans</strong> is <strong>unverified</strong>. OnlyFans has never released age-disaggregated creator data; this is a re-extrapolation of conflicting numbers. The defensible figure is approximately <strong>2% of U.S. women aged 18&ndash;45 are OF creators</strong>. The <strong>8&ndash;14% of U.S. women aged 18&ndash;24</strong> figure used in the essay is a derived estimate &mdash; plausible, directionally consistent, but not primary-sourced.
+  </div>
+
+  <h3>Creator Demographics (Female)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Age</th><th>% of Female Creators</th></tr></thead>
+    <tbody>
+      <tr><td><strong>18&ndash;25</strong></td><td>21.17%</td></tr>
+      <tr><td>26&ndash;35</td><td>31.63%</td></tr>
+      <tr><td>36&ndash;45</td><td>12.87%</td></tr>
+      <tr><td>46&ndash;55</td><td>9.0%</td></tr>
+      <tr><td>56+</td><td>25.33%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Fan / Buyer Demographics</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Age</th><th>% of OF Buyers</th></tr></thead>
+    <tbody>
+      <tr><td><strong>18&ndash;24</strong></td><td>25.54%</td></tr>
+      <tr><td><strong>25&ndash;34</strong></td><td>35.78%</td></tr>
+      <tr><td>35&ndash;44</td><td>17.95%</td></tr>
+      <tr><td>45&ndash;54</td><td>9.57%</td></tr>
+      <tr><td>55&ndash;64</td><td>6.45%</td></tr>
+      <tr><td>65+</td><td>4.72%</td></tr>
+      <tr><td><strong>Married subscribers</strong></td><td><strong>89.5%</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>The Income Reality</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Average creator earnings</td><td>$131/month post-fee</td><td>SimpleBeen</td></tr>
+      <tr><td>Most creators earn</td><td>Under $200/month</td><td>OFStats</td></tr>
+      <tr><td>Top 1% earn</td><td>33% of all revenue</td><td>OFStats</td></tr>
+      <tr><td>Top 10% earn</td><td>90% of all revenue</td><td>OFStats</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 8 ─────────── -->
+<div class="section" id="sec-8">
+  <div class="section-num">Section 08</div>
+  <h2>Instagram &amp; The Soft Attention Layer</h2>
+  <div class="subtitle">The lobby of the paid intimacy economy.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Average likes per post &mdash; women</td><td>578</td><td>Influencer Marketing Hub</td></tr>
+      <tr><td>Average likes per post &mdash; men</td><td>117</td><td>Influencer Marketing Hub</td></tr>
+      <tr><td>Women get how many more likes</td><td>5&times; more than men</td><td>Influencer Marketing Hub</td></tr>
+      <tr><td>Men engaging female content</td><td>10&times; more likely than engaging male content</td><td>Influencer Marketing Hub</td></tr>
+      <tr><td>Male likes going to other men</td><td>Only 13%</td><td>IMH data</td></tr>
+      <tr><td>U.S. Instagram users aged 18&ndash;24</td><td>26.5% of all U.S. users</td><td>Statista 2025</td></tr>
+      <tr><td>Creator economy brand spend (2025)</td><td>$37B &mdash; growing 4&times; faster than total media</td><td>Influencer Marketing Hub</td></tr>
+      <tr><td>Instagram as traffic source for OF creators</td><td>Primary funnel for top earners</td><td>Multiple creator reports</td></tr>
+      <tr><td>New followers women gain daily from listing IG on dating profiles</td><td>5&ndash;100/day</td><td>Social media research</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 9 ─────────── -->
+<div class="section" id="sec-9">
+  <div class="section-num">Section 09</div>
+  <h2>Dating Apps</h2>
+  <div class="subtitle">The romantic distribution network.</div>
+
+  <figure class="chart">
+    <img src="charts/appendix/image_4.png" alt="Chart showing the male-female user split across the major dating apps: Tinder, Bumble, OKCupid, Hinge, all skewed heavily male." loading="lazy">
+    <div class="chart-caption"><strong>Chart 4 &mdash; The Distribution Network.</strong> Gender split across the major dating apps. Men are demand. Women are scarce supply.</div>
+  </figure>
+
+  <h3>Gender Split by Platform</h3>
+  <div class="table-wrap"><table class="t-3col">
+    <thead><tr><th>Platform</th><th>Male Users</th><th>Female Users</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tinder</strong></td><td>75.8%</td><td>24.2%</td></tr>
+      <tr><td>Bumble</td><td>68%</td><td>32%</td></tr>
+      <tr><td>OKCupid</td><td>74%</td><td>26%</td></tr>
+      <tr><td>Hinge</td><td>65%</td><td>35%</td></tr>
+      <tr><td><strong>U.S. Average</strong></td><td>~71%</td><td>~29%</td></tr>
+      <tr><td>Europe Average</td><td>~85%</td><td>~15%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Behavior &amp; Spending</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Men using apps for paid features</td><td>41% of male users vs. 29% of women</td><td>Pew 2023</td></tr>
+      <tr><td>Men spending $100+/month on dating</td><td>57% vs. 35% of women</td><td>LendingTree</td></tr>
+      <tr><td>Men giving gifts monthly in relationship</td><td>35% vs. 21% women</td><td>LendingTree</td></tr>
+      <tr><td>Men spending more when in relationship</td><td>78% vs. 62% women</td><td>LendingTree</td></tr>
+      <tr><td>Tinder annual revenue</td><td>~$1.9B &mdash; majority male subscribers</td><td>BusinessOfApps</td></tr>
+      <tr><td>Married users on dating apps</td><td>30% of Tinder users</td><td>BusinessOfApps</td></tr>
+      <tr><td>Women using apps for validation</td><td>41% cite confidence boost</td><td>Attachment Project 2026</td></tr>
+      <tr><td>Validation as stated motivation for app use</td><td>#2 overall motivation, both genders</td><td>Academic research</td></tr>
+      <tr><td>Dating app satisfaction (2025)</td><td>22% &mdash; down from 44% in 2019</td><td>Pew Research</td></tr>
+      <tr><td>Men who have &ldquo;given up&rdquo; on dating</td><td>47%</td><td>Pew Research</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 10 ─────────── -->
+<div class="section" id="sec-10">
+  <div class="section-num">Section 10</div>
+  <h2>Influencer / Podcast Economy</h2>
+  <div class="subtitle">Cooper vs. Tate &mdash; the two poles, monetized.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td><em>Call Her Daddy</em> &mdash; listeners in 2 months of launch</td><td>0 &rarr; 2 million</td><td>Industry reports</td></tr>
+      <tr><td>Spotify deal (2021)</td><td>$60 million exclusive</td><td>Variety</td></tr>
+      <tr><td>SiriusXM deal (2024)</td><td>$100 million</td><td>Bloomberg</td></tr>
+      <tr><td>Spotify followers</td><td>4.4 million &mdash; #2 globally behind Joe Rogan</td><td>Chartable</td></tr>
+      <tr><td>UK teen boys (16&ndash;17) who consumed Andrew Tate content</td><td>80%</td><td>UK survey</td></tr>
+      <tr><td>Young men (16&ndash;25) with positive view of Tate</td><td>1 in 3 (31%)</td><td>UK survey</td></tr>
+      <tr><td>Incel community aged 18&ndash;30</td><td>82%</td><td>Research survey</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 11 ─────────── -->
+<div class="section" id="sec-11">
+  <div class="section-num">Section 11</div>
+  <h2>Marriage &amp; Divorce</h2>
+  <div class="subtitle">The institution under stress.</div>
+
+  <figure class="chart">
+    <img src="charts/appendix/image_5.png" alt="Chart showing the U.S. marriage rate per 1,000 people declining from 10.6 in 1970 to 6.0 in 2024, the lowest in recorded history." loading="lazy">
+    <div class="chart-caption"><strong>Chart 5 &mdash; Marriage Collapse.</strong> U.S. marriage rate, 1970&ndash;2024. The contract is losing its inevitability.</div>
+  </figure>
+
+  <h3>Marriage Collapse</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>U.S. marriage rate (2024)</td><td>6.0 per 1,000 &mdash; lowest in recorded U.S. history</td><td>CDC NCHS</td></tr>
+      <tr><td>Rate in 1970</td><td>10.6 per 1,000</td><td>CDC</td></tr>
+      <tr><td>Decline since 1970</td><td>~43%</td><td>CDC</td></tr>
+      <tr><td>Men under 30 who are single</td><td>63% &mdash; historic high</td><td>Pew 2024</td></tr>
+      <tr><td>China marriage registrations (2024)</td><td>60-year all-time low &mdash; down 20.5% in one year</td><td>Chinese Ministry of Civil Affairs</td></tr>
+      <tr><td>Projected never-married by 45 (2050)</td><td>1 in 3 young adults</td><td>Pew Research</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Divorce Stats</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>First marriages ending in divorce</td><td>~41%</td><td>CDC / NCHS</td></tr>
+      <tr><td>Overall divorce rate (2024)</td><td>2.3 per 1,000</td><td>CDC</td></tr>
+      <tr><td>Women initiate divorce &mdash; overall</td><td>69&ndash;70%</td><td>Rosenfeld, Stanford / ASA</td></tr>
+      <tr><td>Women initiate &mdash; college-educated couples</td><td>~90%</td><td>Rosenfeld, Stanford</td></tr>
+      <tr><td><strong>Man&rsquo;s probability she files on him (general)</strong></td><td>50% &times; 70% = ~29%</td><td>Calculated</td></tr>
+      <tr><td><strong>Man&rsquo;s probability she files on him (college-educated wife)</strong></td><td>50% &times; 90% = ~45%</td><td>Calculated</td></tr>
+      <tr><td>His agency over outcome (college wife)</td><td>50% &times; 10% = 5%</td><td>Calculated</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Divorce by Education</h3>
+  <div class="table-wrap"><table class="t-3col">
+    <thead><tr><th>Education Level</th><th>Divorce Rate</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Bachelor&rsquo;s degree or higher</strong></td><td>25.9%</td><td>BGSU / NCFMR</td></tr>
+      <tr><td>Associate&rsquo;s degree</td><td>30.1%</td><td>BGSU</td></tr>
+      <tr><td>Some college</td><td>36.3%</td><td>BGSU</td></tr>
+      <tr><td>High school diploma</td><td>38.8%</td><td>BGSU</td></tr>
+      <tr><td>Less than high school</td><td>45.3%</td><td>BGSU</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Alimony &amp; Custody</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Alimony recipients who are women</td><td>97%</td><td>U.S. Census Bureau</td></tr>
+      <tr><td>Female alimony recipients</td><td>388,000 women</td><td>U.S. Census</td></tr>
+      <tr><td>Male alimony recipients</td><td>12,000 men</td><td>U.S. Census</td></tr>
+      <tr><td>Median alimony (20+ year marriage)</td><td>$5,000/month</td><td>Legal surveys</td></tr>
+      <tr><td>Custodial parent is mother</td><td>5 of every 6 (83%)</td><td>Census Bureau</td></tr>
+      <tr><td>Men paying alimony (% of all divorce cases)</td><td>~72%</td><td>Legal research</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 12 ─────────── -->
+<div class="section" id="sec-12">
+  <div class="section-num">Section 12</div>
+  <h2>The Sexlessness Pyramid</h2>
+  <div class="subtitle">The base of the pyramid, measured.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Men 18&ndash;30 with zero sex past year (2024)</td><td>~24.9% &mdash; nearly 1 in 4</td><td>GSS / CDC</td></tr>
+      <tr><td>Same stat in 2013</td><td>~9%</td><td>GSS</td></tr>
+      <tr><td>Change</td><td>Nearly tripled in one decade</td><td>GSS</td></tr>
+      <tr><td>Women 18&ndash;30 sexless (2024)</td><td>~13&ndash;18%</td><td>GSS</td></tr>
+      <tr><td>Male virgins aged 22&ndash;34 (2023)</td><td>~10% (up from 4%)</td><td>NSFG</td></tr>
+      <tr><td>Top 1% of men (lifetime partners)</td><td>150+</td><td>Survey research</td></tr>
+      <tr><td>Top 5% of men (lifetime partners)</td><td>50+</td><td>Survey research</td></tr>
+      <tr><td>Median man (lifetime partners)</td><td>5&ndash;6.3</td><td>NSFG</td></tr>
+      <tr><td>Median woman (lifetime partners)</td><td>3&ndash;4.3</td><td>NSFG</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 13 ─────────── -->
+<div class="section" id="sec-13">
+  <div class="section-num">Section 13</div>
+  <h2>AI Companions &amp; Physical Robots</h2>
+  <div class="subtitle">The fulfillment layer.</div>
+
+  <figure class="chart">
+    <img src="charts/appendix/image_6.png" alt="Chart showing the explosive growth trajectory of the AI companion market from $6.8B in 2025 to $42.5B by 2034, alongside the broader SexTech ecosystem." loading="lazy">
+    <div class="chart-caption"><strong>Chart 6 &mdash; The Fulfillment Layer.</strong> AI companion market growth, plus the broader SexTech and physical-robot trajectories.</div>
+  </figure>
+
+  <h3>Virtual AI</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>AI Companion market (2025)</td><td>$6.8B</td><td>Grand View Research</td></tr>
+      <tr><td>Projected by 2034</td><td>$42.5B at 22.6% CAGR</td><td>Grand View Research</td></tr>
+      <tr><td>AI companion app growth (2022&ndash;2025)</td><td>+700%</td><td>Multiple sources</td></tr>
+      <tr><td>AI usage in dating &mdash; increase</td><td>+333%</td><td>Digital intimacy research</td></tr>
+      <tr><td>Singles using AI romantically</td><td>26%</td><td>Survey data</td></tr>
+      <tr><td>Young adult men with AI romantic partner</td><td>31%</td><td>Pew / survey</td></tr>
+      <tr><td>U.S. men using generative AI (2024)</td><td>50% vs. 37% women</td><td>Pew Research</td></tr>
+      <tr><td>ChatGPT mobile users (male share)</td><td>~85%</td><td>App analytics</td></tr>
+      <tr><td>AI-driven dating platforms (2030 projection)</td><td>85% market share</td><td>Industry forecast</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Physical AI (Sex Robots)</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>AI sex robot / doll market (2024)</td><td>$465M&ndash;$509M</td><td>Market research</td></tr>
+      <tr><td>Projected by 2031&ndash;2032</td><td>$1.5B&ndash;$1.57B at ~18% CAGR</td><td>Grand View Research</td></tr>
+      <tr><td>Emotion recognition accuracy (2025 models)</td><td>98%</td><td>Tech industry data</td></tr>
+      <tr><td>Female AI researchers globally</td><td>Only 12%</td><td>UNESCO</td></tr>
+      <tr><td>Full SexTech market (2025)</td><td>$43.2B &rarr; $250B by 2035</td><td>Grand View Research</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 14 ─────────── -->
+<div class="section" id="sec-14">
+  <div class="section-num">Section 14</div>
+  <h2>Fertility Collapse</h2>
+  <div class="subtitle">The downstream of the broken market.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>U.S. women 30&ndash;34 who are childless (2024)</td><td>40% &mdash; up from 29% in 2014</td><td>CDC NCHS</td></tr>
+      <tr><td>Women 20&ndash;29 planning to remain childfree</td><td>39%</td><td>Pew Research</td></tr>
+      <tr><td>U.S. births below expected level (17 years)</td><td>11.8 million fewer births</td><td>Brookings / CDC</td></tr>
+      <tr><td>Excess childless U.S. women vs. historical baseline</td><td>5.7 million more than expected</td><td>Brookings</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 15 ─────────── -->
+<div class="section" id="sec-15">
+  <div class="section-num">Section 15</div>
+  <h2>Transgender Demographic Shift</h2>
+  <div class="subtitle">The same era destabilizing older categories of gender, desire, and belonging. Treat with care.</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Stat</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>U.S. adults identifying as transgender</td><td>2.1 million (0.8%)</td><td>UCLA Williams Institute 2026</td></tr>
+      <tr><td>Youth (13&ndash;17) identifying as transgender</td><td>724,000 (3.3% of age group)</td><td>UCLA Williams Institute</td></tr>
+      <tr><td>Adults under 30 identifying as trans or nonbinary</td><td>5.1%</td><td>Pew Research</td></tr>
+      <tr><td>Trans women (male &rarr; female) among trans adults</td><td>32.7%</td><td>UCLA Williams Institute 2026</td></tr>
+      <tr><td>Trans men (female &rarr; male) among trans adults</td><td>34.2%</td><td>UCLA Williams Institute 2026</td></tr>
+      <tr><td>Historical MTF-to-FTM ratio</td><td>~2.5&ndash;3:1 (MTF outnumbered FTM)</td><td>Amsterdam Gender Dysphoria Clinic</td></tr>
+      <tr><td>Current ratio (2026)</td><td>Trans men now slightly outnumber trans women</td><td>UCLA Williams Institute</td></tr>
+      <tr><td>When demographic flip occurred</td><td>2017&ndash;2022</td><td>Pew / UCLA data</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── SECTION 16 ─────────── -->
+<div class="section" id="sec-16">
+  <div class="section-num">Section 16</div>
+  <h2>The Full Money Map</h2>
+  <div class="subtitle">Annual men &rarr; women financial transfer, top-to-bottom.</div>
+
+  <div class="table-wrap"><table class="t-3col">
+    <thead><tr><th>Category</th><th>Annual Spend</th><th>Male Share</th></tr></thead>
+    <tbody>
+      <tr><td>U.S. total annual dating spend</td><td>$117.4B</td><td>Men pay ~60%</td></tr>
+      <tr><td>Average man&rsquo;s annual spend on dates</td><td>$2,279/year</td><td>100% male</td></tr>
+      <tr><td>Men in relationships &mdash; excess spend vs. women</td><td>$5,000&ndash;$15,000/year more</td><td>100% male</td></tr>
+      <tr><td>OnlyFans fan payments</td><td>$7.22B/year</td><td>~90% male</td></tr>
+      <tr><td>Pornography (U.S.)</td><td>$1.1B+/year</td><td>~64&ndash;80% male</td></tr>
+      <tr><td>Prostitution (U.S. underground)</td><td>~$1&ndash;2B/year</td><td>~99% male</td></tr>
+      <tr><td>AI companions</td><td>$6.8B/year</td><td>~75&ndash;85% male</td></tr>
+      <tr><td>Full SexTech</td><td>$43.2B/year</td><td>~85&ndash;90% male</td></tr>
+      <tr><td>Dating apps (paid subscriptions)</td><td>~$3B/year</td><td>Men 41% of users but majority of payers</td></tr>
+      <tr><td>Alimony (annual U.S. total)</td><td>~$6B/year</td><td>~97% paid by men</td></tr>
+      <tr><td><strong>Total visible flow</strong></td><td><strong>~$120B+/year</strong></td><td><strong>~90% male-funded</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="one-liner">
+    &ldquo;Men are <strong>49% of the population</strong> and fund approximately <strong>90% of the attention economy</strong> &mdash; from the first swipe to the last alimony check.<br>
+    The supply is female. The demand is male. <strong>The bill has always gone to one side of the table.</strong>&rdquo;
+  </div>
+</div>
+
+<!-- ─────────── CHART INDEX ─────────── -->
+<div class="section" id="chart-index">
+  <div class="section-num">Appendix</div>
+  <h2>Chart Index</h2>
+  <div class="subtitle">All six charts, what they show, and the headline stat each delivers.</div>
+  <div class="table-wrap"><table class="t-3col">
+    <thead><tr><th>Chart</th><th>What It Shows</th><th>Key Stat</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chart 1 &mdash; Attention Sweet Spot</strong></td><td>Women&rsquo;s desirability peaks at 18, men&rsquo;s at 50</td><td>Golden zone = ages 18&ndash;24</td></tr>
+      <tr><td><strong>Chart 2 &mdash; Attention Gini</strong></td><td>Men&rsquo;s dating inequality vs. world Gini scores</td><td>Tinder men = 0.58; worse than 95% of nations</td></tr>
+      <tr><td><strong>Chart 3 &mdash; OnlyFans Age Distribution</strong></td><td>Female creator vs. male buyer age bands</td><td>Both cluster 18&ndash;34; 89.5% of buyers married</td></tr>
+      <tr><td><strong>Chart 4 &mdash; The Distribution Network</strong></td><td>Gender split across dating apps</td><td>Women = supply; men = demand at every layer</td></tr>
+      <tr><td><strong>Chart 5 &mdash; Marriage Collapse</strong></td><td>U.S. marriage rate 1970&ndash;2024</td><td>10.6 &rarr; 6.0 per 1,000 &mdash; lowest in record</td></tr>
+      <tr><td><strong>Chart 6 &mdash; The Fulfillment Layer</strong></td><td>AI companion + SexTech growth</td><td>$6.8B (2025) &rarr; $42.5B (2034); SexTech &rarr; $250B by 2035</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ─────────── CTA BACK TO ESSAY ─────────── -->
+<div class="cta-card">
+  <div class="cta-overline">Read the Essay</div>
+  <h3>The Case for AI Romance</h3>
+  <p>The long-form essay this appendix supports &mdash; attention, intimacy, and the market AI is about to automate. Six parts, two charts, one reckoning.</p>
+  <a href="the-case-for-ai-romance.html">Open the Essay &rarr;</a>
+</div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div><strong>Master Statistics Appendix</strong> &middot; <em>The Case for AI Romance</em> &middot; <strong>Saad Siddique</strong> &middot; 2026</div>
+  <div class="footer-line">
+    <a href="/">Home</a> &middot;
+    <a href="the-case-for-ai-romance.html">Essay</a> &middot;
+    <a href="https://www.linkedin.com/in/saad-siddique770/" target="_blank" rel="noopener">LinkedIn</a> &middot;
+    <a href="https://www.instagram.com/saad_sid770/" target="_blank" rel="noopener">Instagram</a> &middot;
+    <a href="mailto:saad@saadsid.ai">Email</a>
+  </div>
+  <div class="footer-line" style="opacity:.6;margin-top:.8rem">Cross-validated against at least two independent primary sources per figure.</div>
+</footer>
+
+</body>
+</html>

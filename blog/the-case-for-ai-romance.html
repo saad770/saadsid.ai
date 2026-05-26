@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Case for AI Romance — Saad Siddique</title>
+<meta name="description" content="A long-form essay on attention, intimacy, and the market AI is about to automate. By Saad Siddique.">
+<meta name="author" content="Saad Siddique">
+<meta property="og:title" content="The Case for AI Romance">
+<meta property="og:description" content="The attention economy is colliding with synthetic intimacy. A reckoning with the market that built it.">
+<meta property="og:url" content="https://saadsid.ai/blog/the-case-for-ai-romance.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231B2A4A'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia, serif' font-weight='700' font-size='18' fill='%23ffffff'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --navy:#1B2A4A;--accent:#0078D4;--purple:#5C2D91;--green:#107C10;
+  --orange:#D83B01;--gold:#FFB900;--teal:#0E8A7E;--rose:#A4262C;
+  --light:#F5F7FA;--text:#2D2D2D;--muted:#605E5C;
+  --white:#FFFFFF;--border:#E1DFDD;
+  --shadow:0 4px 20px rgba(27,42,74,.08);--reading-width:720px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Georgia','Cambria','Times New Roman',serif;
+  color:var(--text);background:var(--light);
+  line-height:1.78;font-size:18px;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(27,42,74,.97);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  height:52px;display:flex;align-items:center;padding:0 1.5rem;
+}
+.nav-brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;margin-right:auto}
+.nav-monogram{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:'Segoe UI',system-ui,sans-serif;
+  font-weight:800;font-size:.7rem;flex-shrink:0;
+}
+.nav-title{color:#fff;font-weight:600;font-size:.85rem;font-family:'Segoe UI',system-ui,sans-serif;white-space:nowrap}
+.nav-badge{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);
+  border-radius:100px;padding:.15rem .8rem;font-size:.65rem;
+  color:rgba(255,255,255,.7);font-family:'Segoe UI',system-ui,sans-serif;
+  letter-spacing:.05em;text-transform:uppercase;margin-left:.8rem;
+}
+.nav-right{margin-left:auto;display:flex;gap:1rem;align-items:center}
+.nav-link{
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.75rem;
+  letter-spacing:.04em;text-transform:uppercase;
+}
+.nav-link:hover{color:#fff}
+.hero{
+  min-height:74vh;
+  background:linear-gradient(155deg,#0a1628 0%,var(--navy) 30%,#3a2255 65%,var(--purple) 100%);
+  color:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:90px 2rem 60px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,255,255,.04),transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-150px;left:-150px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(216,59,1,.10),transparent 70%);
+  border-radius:50%;
+}
+.hero-overline{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;margin-bottom:1rem;position:relative;z-index:1;
+}
+.hero h1{
+  font-size:clamp(2.2rem,6vw,4rem);font-weight:700;line-height:1.08;
+  letter-spacing:-.02em;position:relative;z-index:1;max-width:820px;
+}
+.hero-subtitle{
+  font-size:clamp(.95rem,2.2vw,1.18rem);opacity:.85;position:relative;z-index:1;
+  margin-top:1.4rem;max-width:640px;line-height:1.55;font-style:italic;
+}
+.hero-subtitle em{font-style:normal;color:#fff;font-weight:500}
+.hero-author{
+  margin-top:2rem;font-family:'Segoe UI',system-ui,sans-serif;
+  font-size:.85rem;font-weight:600;letter-spacing:.06em;
+  position:relative;z-index:1;opacity:.9;
+}
+.hero-tag{
+  display:inline-block;margin-top:.8rem;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  border-radius:100px;padding:.3rem 1.4rem;font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  font-family:'Segoe UI',system-ui,sans-serif;position:relative;z-index:1;
+}
+.reading{max-width:var(--reading-width);margin:0 auto;padding:0 1.5rem}
+.book-body{padding-top:2rem;padding-bottom:4rem}
+.part-divider{
+  margin:3.5rem calc(-50vw + 50%) 2.2rem;
+  padding:2.8rem 2rem;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  position:relative;overflow:hidden;min-height:170px;
+}
+.part-divider::after{
+  content:'';position:absolute;top:0;right:0;width:400px;height:100%;
+  background:radial-gradient(ellipse at right,rgba(255,255,255,.08),transparent 70%);
+}
+.part-num{
+  font-size:4rem;font-weight:900;color:rgba(255,255,255,.15);line-height:1;
+  font-family:'Segoe UI',system-ui,sans-serif;position:relative;z-index:1;
+  letter-spacing:.03em;
+}
+.part-label{
+  font-size:clamp(1.1rem,3vw,1.6rem);font-weight:700;color:#fff;
+  letter-spacing:.01em;position:relative;z-index:1;max-width:640px;margin-top:.45rem;
+  text-transform:uppercase;
+}
+.section-heading{
+  color:var(--navy);margin:2.5rem 0 1rem;line-height:1.3;
+  font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;
+}
+h3.section-heading{font-family:'Georgia',serif}
+p{margin-bottom:1.2rem}
+.lead{font-size:1.08rem;line-height:1.7;color:var(--text)}
+.quote{
+  background:linear-gradient(135deg,#f0f4ff,#E6F2FF);
+  border-left:4px solid var(--accent);border-radius:8px;
+  padding:1.5rem 1.8rem;margin:2rem 0;
+  font-style:italic;font-size:1.05rem;color:var(--navy);line-height:1.65;
+}
+.quote strong{color:var(--navy)}
+.quote.purple{background:linear-gradient(135deg,#f3eef8,#ece2f5);border-left-color:var(--purple)}
+.quote.orange{background:linear-gradient(135deg,#fff1ea,#ffe1cc);border-left-color:var(--orange)}
+.quote.gold{background:linear-gradient(135deg,#fff8e1,#fff0b3);border-left-color:var(--gold)}
+.quote.green{background:linear-gradient(135deg,#eaf6ea,#d6ebd6);border-left-color:var(--green)}
+.quote.navy{background:linear-gradient(135deg,#eef1f8,#dde3f0);border-left-color:var(--navy)}
+.pull{
+  font-family:'Georgia',serif;font-size:1.4rem;line-height:1.4;
+  font-weight:700;color:var(--navy);
+  text-align:center;margin:2.5rem 0;
+  padding:.5rem 1rem;letter-spacing:-.01em;
+}
+.content-list{margin:1rem 0 1.5rem 1.5rem;line-height:1.7}
+.content-list li{margin-bottom:.6rem;padding-left:.3rem}
+.img-figure{margin:2.2rem 0;text-align:center}
+.img-figure img{max-width:100%;height:auto;border-radius:10px;box-shadow:0 4px 24px rgba(27,42,74,.12);background:#fff}
+.img-caption{
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.78rem;color:var(--muted);
+  margin-top:.7rem;letter-spacing:.02em;line-height:1.5;
+}
+.img-caption strong{color:var(--navy)}
+.row{display:grid;gap:1rem;margin:1.8rem 0}
+.row-2{grid-template-columns:1fr 1fr}
+.row-3{grid-template-columns:1fr 1fr 1fr}
+.row-4{grid-template-columns:repeat(4,1fr)}
+.stat{
+  background:var(--white);border-radius:12px;padding:1.2rem .9rem;
+  box-shadow:var(--shadow);text-align:center;
+}
+.stat-val{
+  font-size:1.7rem;font-weight:800;color:var(--accent);line-height:1.1;
+  font-family:'Segoe UI',system-ui,sans-serif;
+}
+.stat-val.purple{color:var(--purple)}
+.stat-val.orange{color:var(--orange)}
+.stat-val.green{color:var(--green)}
+.stat-val.gold{color:#B68900}
+.stat-val.navy{color:var(--navy)}
+.stat-label{
+  font-size:.74rem;color:var(--muted);margin-top:.4rem;line-height:1.4;
+  font-family:'Segoe UI',system-ui,sans-serif;
+}
+.cta-card{
+  margin:3rem 0 1rem;
+  background:linear-gradient(135deg,var(--navy),#2d4a7a);
+  border-radius:14px;padding:2rem 1.8rem;color:#fff;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  box-shadow:0 6px 24px rgba(27,42,74,.18);
+}
+.cta-card .cta-overline{
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:.6rem;
+}
+.cta-card h3{font-family:'Georgia',serif;font-size:1.35rem;margin-bottom:.6rem}
+.cta-card p{font-size:.95rem;opacity:.85;margin-bottom:1.2rem;max-width:520px}
+.cta-card a{
+  display:inline-block;background:var(--accent);color:#fff;
+  text-decoration:none;padding:.7rem 1.6rem;border-radius:100px;
+  font-family:'Segoe UI',system-ui,sans-serif;font-size:.82rem;
+  font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  transition:background .15s;
+}
+.cta-card a:hover{background:#005a9e}
+.footer{
+  background:var(--navy);color:rgba(255,255,255,.55);text-align:center;
+  padding:2.8rem 1.5rem;font-size:.8rem;font-family:'Segoe UI',system-ui,sans-serif;
+}
+.footer strong{color:rgba(255,255,255,.9)}
+.footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 .5rem}
+.footer a:hover{color:#fff}
+.footer-line{margin-top:.4rem}
+strong{font-weight:700}
+em{font-style:italic}
+a{color:var(--accent)}
+.section-break{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:2.5rem 0}
+
+@media(max-width:768px){
+  body{font-size:16.5px;line-height:1.72}
+  .reading{padding:0 1.2rem}
+  .hero{min-height:65vh;padding:80px 1.5rem 50px}
+  .part-divider{min-height:130px;padding:2rem 1.5rem}
+  .part-num{font-size:3rem}
+  .quote{padding:1.2rem 1.3rem;font-size:.95rem}
+  .pull{font-size:1.15rem}
+  .row-2,.row-3,.row-4{grid-template-columns:1fr 1fr}
+  .stat-val{font-size:1.4rem}
+}
+@media(max-width:480px){
+  body{font-size:16px}
+  .hero h1{font-size:1.9rem}
+  .row-2,.row-3,.row-4{grid-template-columns:1fr}
+  .nav-title{display:none}
+  .nav-badge{font-size:.6rem}
+}
+@media print{
+  .nav,.cta-card{display:none}
+  .hero{min-height:auto;padding:2rem}
+  .part-divider{margin:2rem 0;min-height:auto;padding:1.5rem}
+  body{font-size:11pt}
+  .img-figure img{box-shadow:none}
+  .stat{box-shadow:none;border:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <span class="nav-monogram">SS</span>
+    <span class="nav-title">The Case for AI Romance</span>
+    <span class="nav-badge">Essay · v2</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="the-case-for-ai-romance-appendix.html">Appendix</a>
+    <a class="nav-link" href="/">Home</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-overline">Long-form Essay</div>
+  <h1>The Case for AI Romance</h1>
+  <p class="hero-subtitle">
+    A woman&rsquo;s deepest desire is to tame a dragon. A man&rsquo;s deepest desire is to be the dragon &mdash; unconquerable by the world, tamed only by her purity, devotion, and love.
+  </p>
+  <div class="hero-author">Saad Siddique</div>
+  <span class="hero-tag">Attention &bull; Intimacy &bull; AI &bull; The Market Underneath</span>
+</section>
+
+<div class="book-body">
+  <div class="reading">
+
+<!-- ─────────── PREFACE ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #1B2A4A, #2d4a7a)">
+  <span class="part-num">00</span>
+  <span class="part-label">PREFACE</span>
+</div>
+
+<p class="lead">The dragon. The beast. The monster.</p>
+<p>They were never really about scales, horns, claws, or wings.</p>
+<p>They were metaphors for a desire human beings have carried for thousands of years: overwhelming power, feared by the world, choosing one person. The beast in the castle. The god in animal form. The dragon bonded to one rider. The monster at the center of the maze.</p>
+<p>Then 2025 arrived, and the old creatures walked out of myth and onto the bestseller lists.</p>
+<p><em>Morning Glory Milking Farm</em> should sound absurd: a broke, overeducated millennial woman takes a job at a magical creature farm and becomes emotionally entangled with a powerful minotaur. Half man. Half bull. All dominance. All tenderness. All fantasy.</p>
+<p>Women did not laugh it away.</p>
+<p>They understood it.</p>
+<p>Then <em>Onyx Storm</em> and the romantasy boom made the same desire impossible to ignore. The dragon was not decoration. The dragon was the point.</p>
+<p>But this article is not really about minotaurs or dragons.</p>
+<p>It is about the market growing underneath them.</p>
+
+<blockquote class="quote">
+  &ldquo;Women monetize visibility; men pay for proximity to it.&rdquo;
+</blockquote>
+
+<p>For most of history, desire had geography. A village. A street. A brothel. A local beauty. A known reputation. Attention had limits, and the pyramid was local: the top man in the tribe, town, court, or city controlled more resources, more visibility, and more options, but everyone else was still competing inside a bounded world.</p>
+<p>Then the internet removed the walls.</p>
+<p>Now the pyramid is global on both sides. A young woman turns 18, opens Instagram, and enters a borderless attention market. She is seen not only by men her age, but by men in their 20s, 30s, 40s, 50s, even 60s, from her city, another country, or the other side of the world. Exposure no longer has geography.</p>
+<p>The average man is trapped in that same expansion. A man in Taiwan is no longer competing only with the best man in his town. He is competing with New York, Dubai, Hollywood, billionaires, founders, athletes, influencers, and every apex male a woman sees before breakfast.</p>
+<p>That is the crux of the imbalance: a tiny group of apex men distorts both sides of the market. Women recalibrate upward because the top is visible everywhere. Men at the bottom compete against a standard they will never touch.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val">&lt;1%</div><div class="stat-label">Female like rate received by the average man on Tinder</div></div>
+  <div class="stat"><div class="stat-val">10%</div><div class="stat-label">Of male profiles capture <strong>58%</strong> of all female attention</div></div>
+  <div class="stat"><div class="stat-val">90%</div><div class="stat-label">Of men compete for the remaining <strong>42%</strong> of attention</div></div>
+  <div class="stat"><div class="stat-val purple">~3:1</div><div class="stat-label">Historical clinic ratio of male-to-female vs. female-to-male transitions</div></div>
+</div>
+
+<p>So they spend, optimize, perform, rage, withdraw, or <strong>pay just to feel like they still exist</strong>.</p>
+<p>The pyramid tells women what power looks like and tells men how far below it they stand. Men spend their lives trying to climb it, but at the top, the question often shifts from commitment to access: the apex gets options, the middle gets pressure, and the bottom becomes invisible or <strong>performative</strong>. For <strong>women</strong>, abundance becomes its own trap: more attention than ever, but less certainty about whether that attention means desire, status-chasing, convenience, or real commitment.</p>
+<p>Imagine the story from the inside: you are a woman in your twenties, still building your own public life, and your phone lights up with a DM from none other than <strong>Elon Musk</strong>, the world&rsquo;s richest man. Not a local celebrity. Not the richest guy in your town. The richest man on Earth. According to reporting around Ashley St. Clair, the message allegedly begins with <strong>&ldquo;Hi cutie,&rdquo;</strong> and then turns into the sentence that explains the whole pyramid: <strong>&ldquo;I want to knock you up again.&rdquo;</strong> That is attention becoming proximity in real time. A man at the apex does not need to wait in the same line as everyone else.</p>
+
+<blockquote class="quote purple">
+  <strong>&ldquo;For 300,000 years,</strong> humans ran the same mating software written in desire, hormones, and survival. Then, in the <strong>last 30 years, someone pushed an update the hardware was never built to run.&rdquo;</strong>
+</blockquote>
+
+<p>The attention economy begins with the oldest profession, <strong>prostitution</strong>: body, proximity, time, and attention turned into a transaction, driven largely by male demand, including a reported <strong>80%</strong> of buyers who are committed men ages <strong>40 to 50</strong>.</p>
+
+<p><strong>Porn</strong> digitized the body. The buyer no longer had to go anywhere. The body came to him through a screen. <strong>Average first exposure for boys is reported around 7 to 8 years old</strong>, and <strong>67% of male teens and young adults</strong> watch monthly. In other words: <strong>demand is manufactured in childhood.</strong></p>
+
+<p><strong>OnlyFans</strong> personalized what porn made anonymous. It gave men a username, a reply, a message, the feeling that the image knew they existed. The empowerment story hides the math: <strong>78% of creators earn under $500 per month</strong>, while the top <strong>1%</strong> captures about <strong>33%</strong> of all revenue. Estimates suggest <strong>8&ndash;14% of American women aged 18 to 24</strong> are selling content on OnlyFans.</p>
+
+<p><strong>Instagram</strong> became the lobby of that paid intimacy economy. Women get around <strong>5 times more likes than men</strong>, and men are <strong>10 times more likely</strong> to engage with female content than male content.</p>
+
+<p>That is the trick: Instagram made visibility scalable. Dating apps made it discoverable. OnlyFans made it payable.</p>
+
+<p>Then culture split into two bubbles. Figures like Alex Cooper monetized sexualized empowerment: <em>Call Her Daddy</em> went from <strong>12,000 listeners to 2 million</strong> in two months, then into a reported <strong>$60 million</strong> Spotify deal and a reported <strong>$100 million</strong> SiriusXM deal. Manosphere leaders like Tate monetized male exclusion: in the U.K., <strong>80% of 16 to 17-year-old boys</strong> have consumed Andrew Tate content; around <strong>1 in 3 young men aged 16 to 25</strong> report a positive view of him; <strong>63% of men under 30</strong> are single; and <strong>47% of men</strong> say they have given up or taken a break from dating.</p>
+
+<p>One side sold <strong>empowerment</strong>. The other sold <strong>resentment</strong>. The platforms and apex men profited from both.</p>
+
+<p>Then dating apps turned the whole thing into infrastructure. Men became paid subscribers competing for women&rsquo;s attention. Tinder is roughly <strong>79% male</strong>. Across U.S. dating apps, men are roughly <strong>71%</strong> of users. Men swipe right on around <strong>61%</strong> of women. Women swipe right on around <strong>5%</strong> of men. And if estimates suggesting <strong>65% of people on dating apps are not actually single</strong> are even directionally right, then the trust problem is not a side effect. It is built into the market.</p>
+
+<p>The old resource-for-attention exchange did not disappear.</p>
+<p class="pull">It got a billing system.</p>
+
+<p>And even that billing system is showing cracks. <strong>Bumble</strong>, the female-first dating app, priced its IPO at <strong>$43</strong> in February 2021; with shares recently trading around <strong>$3.11</strong>, the stock is down roughly <strong>93%</strong> from its IPO price. The market is quietly saying what users already feel: dating apps did not solve trust. They monetized its collapse.</p>
+
+<p>And then the <strong>last safe haven</strong> began to fracture.</p>
+
+<p><strong>Marriage</strong> used to be the final incentive structure: the place where male striving became family, home, legacy, children, and stability. Now, for many men, it increasingly reads as financial and legal exposure. The marriage rate is down more than <strong>60%</strong> since 1970.</p>
+
+<blockquote class="quote orange">
+  <strong>Marriage risk, in one brutal snapshot:</strong><br><br>
+  Almost <strong>50%</strong> of marriages end in divorce. Women initiate around <strong>70%</strong> of divorces, and among college-educated women, that figure is a staggering <strong>90%</strong>. Around <strong>97% of alimony recipients</strong> are women. After divorce, <strong>5 out of 6 custodial parents</strong> are women.
+</blockquote>
+
+<p>For women, marriage no longer feels like guaranteed protection either: it can mean emotional labor, unequal domestic expectations, motherhood penalties, and the risk of being tied to a man who stops trying after commitment.</p>
+
+<p>The old bargain starts to look inverted: men are still expected to provide, spend, compete, and absorb risk, but the reward structure feels less guaranteed than ever.</p>
+
+<blockquote class="quote navy">
+  &ldquo;Men are <strong>49% of the population</strong> and fund approximately <strong>90% of the attention economy</strong>, from the first swipe to the last alimony check. <strong>The supply is female. The demand is male.</strong>&rdquo;
+</blockquote>
+
+<p>That is the lose-lose architecture of the modern market: women compare ordinary men to the apex men in their feeds, while those top <strong>1&ndash;5%</strong> often have too many options to treat access as commitment. This is not because women became shallow overnight. It is because the feed made the exceptional feel normal. For the bottom <strong>80&ndash;90%</strong> of men, the choice becomes brutal: compete for shrinking attention, accept rising marriage risk, become performative, retreat into resentment, or <strong>opt out entirely</strong>.</p>
+
+<p>So where does the pressure go next?</p>
+<p class="pull">It goes to the machines.</p>
+
+<p>AI companionship does not create the demand. It automates the supply.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val">$6.8B</div><div class="stat-label">AI companion market, 2025</div></div>
+  <div class="stat"><div class="stat-val">$42.5B</div><div class="stat-label">Projected by 2034</div></div>
+  <div class="stat"><div class="stat-val orange">+700%</div><div class="stat-label">AI companion app growth, 2022 to mid&#8209;2025</div></div>
+  <div class="stat"><div class="stat-val purple">31%</div><div class="stat-label">Of young men have used an AI romantic partner</div></div>
+</div>
+
+<p>The broader SexTech ecosystem is estimated around <strong>$43.2 billion in 2025</strong>, projected to reach <strong>$250 billion by 2035</strong>.</p>
+
+<p>That is the full circle.</p>
+
+<p><strong>Prostitution</strong> sold proximity. <strong>Porn</strong> sold access. <strong>OnlyFans</strong> sold personalized attention. <strong>Instagram</strong> sold visibility. <strong>Dating apps</strong> sold selection. <strong>Marriage</strong> sold stability, until it fractured.</p>
+
+<p>AI will sell the one thing every layer before it failed to guarantee: <strong>a companion who never rejects you unless rejection itself becomes part of the fantasy.</strong></p>
+
+<p>This article is about <strong>two stories moving toward each other</strong>.</p>
+
+<p>The first is the <strong>fantasy story</strong>: the ancient human desire for a partner who is more than human, overwhelming, singular, dangerous, devoted. For women, the fantasy is to tame the dragon. For men, the fantasy is to be the dragon, unconquerable by the world, tamed only by her purity, devotion, and love.</p>
+
+<p>The second is the <strong>fulfillment story</strong>: how loneliness, dating apps, pornography, social media, OnlyFans, AI companions, and physical AI bodies are building the machine to satisfy that fantasy.</p>
+
+<p>Humanity spent thousands of years dreaming the creature.</p>
+<p>Technology is now building it.</p>
+
+<p>This is not a warning. This is a reckoning.</p>
+
+<p class="pull">Now the prototype has a product road map.</p>
+
+<blockquote class="quote">
+  <em>&ldquo;Trust is the invisible infrastructure of civilization. Families need it. Religion needs it. Societies need it. Financial markets collapse without it. Love depends on it most of all, because love asks two people to believe they are not being priced, gamed, hedged, or quietly replaced.&rdquo;</em><br><br>
+  <em>&ldquo;That infrastructure is cracking exactly where desire meets technology.&rdquo;</em><br><br>
+  <em>&ldquo;Somewhere between the swipe and the algorithm, intimacy learned the language of markets. People became profiles. Profiles became products. Products became ranked by age, beauty, income, status, attention, and optionality. We no longer just choose each other. We compare, appraise, upgrade, ghost, and keep a better offer warm in the background.&rdquo;</em><br><br>
+  <em>&ldquo;What used to be a covenant now behaves like a marketplace. And in a marketplace, trust is not sacred. It is a risk variable.&rdquo;</em>
+</blockquote>
+
+
+<!-- ─────────── PART ONE ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #004578, #0078D4)">
+  <span class="part-num">I</span>
+  <span class="part-label">The Dragon on the Bestseller List</span>
+</div>
+
+<p>The preface begins with the market, but the market only makes sense if we first understand the fantasy it is feeding. Before prostitution, porn, OnlyFans, dating apps, and AI companions, there was the creature: the beast, the dragon, the monster, the overwhelming force that chooses one person.</p>
+
+<p>Start with the part that sounds ridiculous until you realize it explains everything: <em>Morning Glory Milking Farm</em> is a romance about a broke, overeducated millennial woman who takes a job at a farm for magical creatures and becomes emotionally entangled with a powerful minotaur. On paper, it should be absurd. A woman. A monster farm. A half-man, half-bull creature. And yet the book did not become fascinating because it was weird. It became fascinating because it was honest.</p>
+
+<p>Beneath the fantasy is the oldest romantic script in human history: a woman is not merely desired by a man, she is chosen by something overwhelming, something dangerous, something the world cannot domesticate. The minotaur is not the point because he is literally half bull. He is the point because he represents <strong>power made personal</strong>.</p>
+
+<p>Then <em>Onyx Storm</em> makes the same fantasy impossible to miss at blockbuster scale: the woman is bonded not to a polite partner, but to a creature of lethal force, ancient fire, and singular loyalty. The dragon is not decoration. The dragon is destiny.</p>
+
+<p>The minotaur, the dragon, the beast, the god, the vampire, the dark rider, even the future AI companion, are all different costumes for the same desire. That is why the story echoes backward into Pasiphae and the original Minotaur, sideways into <em>Beauty and the Beast</em>, upward into Parvati choosing Shiva &mdash; the destroyer no palace could tame &mdash; and forward into romantasy, where women keep returning to the creature no one else can control.</p>
+
+<p>These stories all circle the same fire: <strong>the female fantasy is to tame the dragon or beast.</strong> And the male mirror fantasy is to <strong>be the dragon</strong>, unconquerable by the world, dangerous in capacity but disciplined in love, tamed only by one woman&rsquo;s purity, devotion, and love.</p>
+
+<p><em>Morning Glory Milking Farm</em> matters because it strips the polite disguise off the fantasy. It says the quiet part with horns. <em>Onyx Storm</em> matters because it proves the same fantasy is not niche. It is mainstream, bestselling, and wearing wings.</p>
+
+<p>The question is not why women would read about a minotaur or a dragon. The question is why, after thousands of years of beasts, gods, dragons, and monsters in love stories, <strong>we are still pretending this desire is new</strong>.</p>
+
+<p>That is the fantasy layer. Now comes the market layer: once desire exists, someone eventually learns how to sell access to it.</p>
+
+
+<!-- ─────────── PART TWO ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #3d1d6b, #5C2D91)">
+  <span class="part-num">II</span>
+  <span class="part-label">The Oldest Market</span>
+</div>
+
+<p>If Part One explains the fantasy, Part Two explains the first business model built around it. Long before apps and algorithms, humans were already converting desire into hierarchy, proximity, payment, and power.</p>
+
+<p class="pull">Attention is all you need.</p>
+
+<p>That phrase belongs to the 2017 Google paper that helped ignite the generative AI era. But as a human thesis, it is older than transformers, older than markets, older than money.</p>
+
+<p>Every transaction has a currency. Nations trade in dollars. Digital believers trade in Bitcoin. Markets trade in liquidity. But <strong>human beings trade in attention</strong>.</p>
+
+<p>To be seen is to exist more fully. To be desired is to be ranked as meaningful. To be chosen is to become real inside someone else&rsquo;s nervous system.</p>
+
+<p>That is why <strong>attention is not decoration. It is oxygen.</strong></p>
+
+<blockquote class="quote purple">
+  &ldquo;Women monetize visibility; men pay for proximity to it.&rdquo;
+</blockquote>
+
+<p>The mistake of modern culture was assuming oxygen would remain sacred once platforms learned how to meter it.</p>
+
+<p>The old human exchange was brutally simple. <strong>Men competed for status, resources, dominance, and display. Women selected, filtered, evaluated, and granted access.</strong> Across 300,000 years of Homo sapiens evolution, that exchange shaped the emotional firmware underneath romance: male striving for female attention, female selection for male signals, and both sides trapped inside a system older than morality.</p>
+
+<p>The pyramid is ancient. Around <strong>7,000 years ago</strong>, the male genetic line went through a dramatic Y-chromosome bottleneck across large parts of Africa, Europe, and Asia. Some genetic interpretations suggest the reproductive ratio collapsed to roughly <strong>one reproducing man for every 17 women</strong>, while the female line showed no comparable collapse. Translation: most men left no genetic descendants. A small number of dominant male lines carried the future.</p>
+
+<p>History made that pyramid explicit. Inca emperors, Ottoman sultans, Chinese emperors, Mughal elites, and Dahomean kings turned access to women into a visible sign of power. In some royal courts, the ruler or elite household controlled hundreds or thousands of women, while ordinary men had little or no access. The apex man did not merely have more wealth. He had more attention, more proximity, more reproduction, more legacy.</p>
+
+<p><strong>Modern life changed the interface. It did not rewrite the firmware.</strong></p>
+
+<p>Even today, <strong>71% of U.S. adults</strong> say it is very important for a man to be able to financially support a family. Only <strong>32%</strong> say the same about women. In <strong>69% of U.S. married or cohabiting couples</strong>, the man still earns more. The ancient script survived feminism, apps, birth control, college, careers, and algorithmic dating. <strong>The clothes changed. The code stayed.</strong></p>
+
+<p>Male display became cars, watches, job titles, follower counts, body composition, and curated lifestyle. Female selection became swipes, likes, replies, DMs, and soft signals of access. The peacock did not disappear. He got a profile.</p>
+
+<p>The difference is scale. In the old world, the strongest man in the village distorted one village. In the digital world, the strongest men on Earth distort everyone. The top founder, the actor, the athlete, the influencer, the billionaire, the man with private jets and global reach, all appear inside the same attention feed as the ordinary man trying to get a reply.</p>
+
+<p>The pyramid did not disappear.</p>
+<p class="pull">It became searchable.</p>
+
+<p>And at the very top, searchable status becomes gravitational. When a man is rich enough, famous enough, powerful enough, or culturally unavoidable enough, he does not simply enter the dating market. He changes the expectations inside it. The average man is competing for attention. <strong>The apex man <em>is</em> the attention.</strong></p>
+
+<p>But before Instagram, before Tinder, before OnlyFans, before Pornhub, before AI companions, there was the oldest profession.</p>
+
+<h3 class="section-heading">Prostitution: the base layer</h3>
+
+<p>Prostitution is the base layer of the attention economy: time, body, proximity, and attention converted into a transaction.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val purple">40&ndash;42M</div><div class="stat-label">Estimated global sex workers</div></div>
+  <div class="stat"><div class="stat-val purple">~1M</div><div class="stat-label">Estimated U.S. active sex workers (~70% women)</div></div>
+  <div class="stat"><div class="stat-val purple">15&ndash;20%</div><div class="stat-label">Of U.S. men have paid for sex at some point</div></div>
+  <div class="stat"><div class="stat-val purple">~80%</div><div class="stat-label">Of buyers in one profile: married men, ages 40&ndash;50</div></div>
+</div>
+
+<p>That last number matters because it destroys the easy story.</p>
+
+<p>Paid intimacy is not only about young men with no access. A large portion of demand appears to come from older, married, resourced men buying separation from emotional negotiation. They are not just buying sex. <strong>They are buying friction removal.</strong></p>
+
+<p>The human cost sits on the other side of the transaction. Estimates suggest <strong>80% to 90%</strong> of female workers may be controlled by a third party such as a pimp or agency. In Atlanta alone, one underground market estimate reaches <strong>$290 million per year</strong>. Some studies of entry into the sex trade report that <strong>73.2%</strong> entered because of drugs or basic survival needs such as food and housing.</p>
+
+<p>Colombia shows the system under economic stress. Estimates range from <strong>70,000 to 100,000</strong> sex workers, around <strong>85% female</strong>. One estimate says roughly <strong>8% of Colombian women</strong> have engaged in sex work at some point. Some reports say <strong>35% or more</strong> are Venezuelan migrants, <strong>60%</strong> report violence or coercion, <strong>45%</strong> were forced or coerced, and <strong>79.7%</strong> say economic reality makes leaving impossible. Reports also include minors inside the trade, which is not a side note. It is the darkest proof that <strong>when attention becomes a market, poverty becomes supply</strong>.</p>
+
+<p>Thailand shows the macro version. Estimates suggest <strong>200,000 to 300,000</strong> female sex workers, with sex industry revenue ranging from <strong>$6.4 billion to $27 billion per year</strong>, or roughly <strong>3% to 14%</strong> of GDP. Sex tourism is projected by some sources to reach <strong>$50 billion by 2027</strong>. Female workers send an estimated <strong>$300 million per year</strong> to rural families.</p>
+
+<p class="pull">The story repeats: comparatively rich men buying proximity from comparatively poor women.</p>
+
+<p>The moral costume changes by era. Sacred ritual. Brothel. Street. Studio. Subscription. Swipe. Chatbot. Robot.</p>
+
+<p><strong>The transaction remains: male resources exchanged for female-coded attention and proximity.</strong></p>
+
+<p>This is not an indictment of women for selling. It is not an indictment of men for buying. It is an indictment of the architecture: the brokers, platforms, incentives, and extraction machines built on biological code that does not update because someone wrote a think piece.</p>
+
+<p>The oldest profession is not an isolated historical curiosity. <strong>It is the opening chapter of the market AI is about to automate.</strong></p>
+
+<p>But the market could only scale once the body no longer had to be present. That is where the story leaves the street and enters the screen.</p>
+
+
+<!-- ─────────── PART THREE ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #075507, #107C10)">
+  <span class="part-num">III</span>
+  <span class="part-label">The Body Goes Digital</span>
+</div>
+
+<p>If prostitution sold proximity, the internet sold distance. The body could now be copied, streamed, ranked, searched, followed, subscribed to, and monetized without ever entering the room.</p>
+
+<p>Then <strong>pornography digitized the transaction</strong>.</p>
+
+<p>The body no longer had to be physically present. It could be recorded, searched, streamed, categorized, and consumed at scale.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val green">$1.1B+</div><div class="stat-label">U.S. porn revenue, 2023 (up from $600M in 2018)</div></div>
+  <div class="stat"><div class="stat-val green">125M+</div><div class="stat-label">Daily visits to Pornhub</div></div>
+  <div class="stat"><div class="stat-val green">~64%</div><div class="stat-label">Of Pornhub visitors are men</div></div>
+  <div class="stat"><div class="stat-val green">Age 7&ndash;8</div><div class="stat-label">Average first exposure for boys</div></div>
+</div>
+
+<p>The deeper number is not revenue.</p>
+<p class="pull">It is age.</p>
+
+<p>Average first exposure for boys is reported around <strong>7 to 8 years old</strong>, and <strong>67% of male teens and young adults</strong> watch monthly. That means many men encounter frictionless, endless, algorithmic sexual novelty before they encounter a real relationship.</p>
+
+<p>Demand is manufactured before adulthood.</p>
+
+<p>Porn solved the proximity problem. It removed risk, geography, rejection, and negotiation. But it created another problem: it was abundant but anonymous. It gave the viewer bodies, not attention. It could satisfy novelty, but not the hunger to be noticed.</p>
+
+<p>Then <strong>OnlyFans personalized the transaction</strong>.</p>
+
+<p>Porn gave men bodies. OnlyFans gave them a username, a reply, a custom message, and the illusion that someone desirable knew they existed.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val green">377.5M</div><div class="stat-label">Registered users, end of 2024</div></div>
+  <div class="stat"><div class="stat-val green">4.2&ndash;4.6M</div><div class="stat-label">Creator accounts</div></div>
+  <div class="stat"><div class="stat-val green">$7.22B</div><div class="stat-label">Total fan spending, 2024</div></div>
+  <div class="stat"><div class="stat-val green">20%</div><div class="stat-label">Of every transaction taken by the platform</div></div>
+</div>
+
+<p>The gender split reveals the old exchange in digital form. Around <strong>70% to 84%</strong> of creators are women. Around <strong>87%</strong> of paying fans are men. One estimate claims around <strong>1.4 million U.S. women</strong> are creators, and estimates suggest <strong>8&ndash;14% of U.S. women aged 18 to 24</strong> are active OnlyFans creators. Even treated cautiously, the direction is unmistakable: a visible share of young women are entering a market where male attention is converted into subscription revenue.</p>
+
+<p>But the success story is mostly marketing.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val orange">$131</div><div class="stat-label">Average creator earnings, per month</div></div>
+  <div class="stat"><div class="stat-val orange">78%</div><div class="stat-label">Of creators earn under $500/month</div></div>
+  <div class="stat"><div class="stat-val orange">33%</div><div class="stat-label">Of all revenue captured by the top 1%</div></div>
+  <div class="stat"><div class="stat-val orange">~90%</div><div class="stat-label">Of revenue captured by the top 10%</div></div>
+</div>
+
+<p>So the platform sells empowerment to women and intimacy to men, while most creators and most subscribers remain stuck inside the same machine.</p>
+
+<blockquote class="quote orange">
+  <strong>The fantasy sold to creators is liberation.</strong><br>
+  <strong>The reality for most is permanent body-image exposure for less than rent.</strong>
+</blockquote>
+
+<p>OnlyFans is not competing with porn. Porn is free. OnlyFans competes with loneliness. The product is not merely the image. The product is the feeling of being individually acknowledged by the image.</p>
+
+<p>That is why Instagram matters.</p>
+
+<p>On Instagram, women receive around <strong>5 times more likes than men</strong>, with one analysis showing average posts by women receiving <strong>578 likes</strong> compared with <strong>117</strong> for men. Men are <strong>10 times more likely</strong> to engage with female content than male content, and only <strong>13% of male likes</strong> go to other men&rsquo;s content. The platform did not invent the mating market. <strong>It gave the mating market a dashboard.</strong></p>
+
+<p>The creator economy turned that dashboard into infrastructure. Global creator economy estimates place the market around <strong>$149 billion in 2024</strong>, projected to reach <strong>$1.07 trillion by 2034</strong>. Creator brand ad spend rose from <strong>$29.5 billion in 2024</strong> to a projected <strong>$37 billion in 2025</strong>, growing far faster than traditional media. Meta&rsquo;s ad machine generated around <strong>$160.6 billion in 2024</strong>, much of it built on the industrial capture of attention.</p>
+
+<p>At the micro level, the machine becomes more intimate. Nano influencers under 10,000 followers can reach engagement rates around <strong>6.23%</strong>, and this tier is women-majority, built around personal accounts and &ldquo;real girl&rdquo; content. Micro influencers in the 10,000 to 50,000 follower range often sit around <strong>2% to 3.86%</strong>, again heavily shaped by women-majority lifestyle, body, beauty, and fashion content. Macro accounts from 50,000 to 500,000 followers drop closer to <strong>1.5% to 2.0%</strong> and become more mixed.</p>
+
+<p>The point is scale: the attention economy is no longer just celebrities. Often, it is the girl next door, the gym crush, the lifestyle account, the soft-porn aesthetic wrapped in relatability.</p>
+
+<p>This matters because the old pyramid used to be obvious at the top: kings, lords, celebrities. Now it exists at every tier. The micro creator is not a global celebrity, but to the man consuming her content, she still becomes a <strong>local apex woman</strong> with hundreds or thousands of men orbiting her attention. The scale of competition moved down the pyramid too.</p>
+
+<p class="pull">That is where the conversion begins.</p>
+
+<p>A woman links Instagram on a dating profile and can gain <strong>5 to 100 followers per day</strong>. Some OnlyFans agencies openly describe Tinder, Bumble, and Hinge as free promotion channels. The funnel is almost too clean to hide:</p>
+
+<ul class="content-list">
+  <li>Dating app profile.</li>
+  <li>Instagram follow.</li>
+  <li>OnlyFans link in bio.</li>
+  <li>Paid subscriber.</li>
+</ul>
+
+<blockquote class="quote green">
+  <strong>The app says romance. The market says acquisition.</strong>
+</blockquote>
+
+<h3 class="section-heading">Cooper vs. Tate: the two poles of the attention war</h3>
+
+<p>The culture around it became glamorous because the attention economy did not only produce platforms. It produced <strong>celebrities of the transaction</strong>.</p>
+
+<p><em>Call Her Daddy</em> went from <strong>12,000 listeners to 2 million</strong> in two months. Spotify acquired it in a <strong>$60 million</strong> exclusive deal. Alexandra Cooper later signed a reported <strong>$100 million</strong> deal with SiriusXM. The show became one of the most popular podcasts in the world by turning sex, dating, breakup tactics, hookup culture, and female confession into mass media. Cooper was listed as the second most popular podcast globally on Spotify in 2024, behind Joe Rogan, with around <strong>4.4 million Spotify followers</strong>.</p>
+
+<p>One pole of the culture sells sexualized empowerment.</p>
+<p>The other pole sells male resentment.</p>
+
+<p>The manosphere is not just ideology. It is a market reaction to romantic invisibility. <strong>63% of men under 30</strong> are now single in one frequently cited report. <strong>47% of men</strong> say they have given up or taken a break from dating. In the U.K., <strong>80% of 16 to 17-year-old boys</strong> have consumed Andrew Tate content. Around <strong>1 in 3 young men aged 16 to 25</strong> report a positive view of Tate, and <strong>31%</strong> see him as a role model. Among young fathers under 35, approval rises to <strong>56%</strong>. Incel community estimates put <strong>82%</strong> of members between <strong>18 and 30</strong>, with <strong>36%</strong> between <strong>18 and 21</strong>.</p>
+
+<blockquote class="quote green">
+  <strong>One pole monetizes visibility. The other monetizes exclusion.</strong> The platform profits from both.
+</blockquote>
+
+<p>Porn trained men to expect endless availability. Instagram trained everyone to compare against impossible beauty. OnlyFans trained users to pay for personalized attention. Creator culture trained women to package visibility as empowerment. The manosphere trained rejected men to turn pain into doctrine.</p>
+
+<p class="pull">AI romance did not arrive as a surprise.</p>
+
+<p>It arrived as the logical next product.</p>
+
+<p>Once the body became content and attention became subscription revenue, the next step was obvious: build a distribution network where everyone could be ranked, filtered, monetized, and rejected at scale.</p>
+
+
+<!-- ─────────── PART FOUR ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #6b2200, #D83B01)">
+  <span class="part-num">IV</span>
+  <span class="part-label">The Distribution Network</span>
+</div>
+
+<p>Part Three shows how intimacy became content. Part Four shows how people themselves became inventory. Dating apps did not create desire, hypergamy, male competition, or rejection. They made all of it measurable.</p>
+
+<p>Dating apps turned the attention economy into <strong>romantic infrastructure</strong>.</p>
+
+<p>The old market had villages, reputations, families, churches, schools, offices, friends, and consequences. The new market has photos, prompts, filters, boosts, subscriptions, and the cold arithmetic of scarcity. Some estimates suggest <strong>65% of people on dating apps are not actually single</strong>, which turns the app from a trust-building tool into a marketplace where availability itself becomes uncertain.</p>
+
+<p>The market has started pricing that trust failure. <strong>Bumble</strong>, the female-first dating app, went public at <strong>$43 per share</strong> in February 2021; recently, it has traded near <strong>$3.11</strong>, down roughly <strong>93%</strong> from its IPO price. In a category built on romantic possibility, that collapse reads like a financial verdict on swipe culture itself.</p>
+
+<h3 class="section-heading">The pyramid goes global</h3>
+
+<p>The central change is not that women suddenly became selective or men suddenly became competitive. That was always true. <strong>The central change is scale.</strong></p>
+
+<p>In a tribe, the top man competed with nearby men. In a small town, the richest or most charismatic man distorted one local market. In Hollywood, a star distorted one social circle. But the internet merged all circles. A man in Austin, Lahore, Taipei, or Omaha is no longer competing only with men around him. He is competing with the curated visibility of the entire male apex.</p>
+
+<p>Every woman with a phone can see the richest men, most attractive men, most famous men, most followed men, and most desired men alive. Elon Musk, Hollywood actors, athletes, founders, creators, finance guys, influencers, and the fictional ideal of all of them together are in the same feed. The average man is not rejected only by a person. <strong>He is rejected by comparison with the apex.</strong></p>
+
+<p>This is not because women became shallow overnight. It is because the feed made the exceptional feel normal.</p>
+
+<p>The Musk and Ashley St. Clair story makes the abstraction concrete. This is not a man in a town competing with other men in the town. This is one of the richest men alive, with companies, rockets, satellites, social platforms, and a global megaphone, entering the private attention economy of a young woman in media. According to court documents and later reporting, after St. Clair sent him a selfie on <strong>November 24, 2024</strong>, when their son was roughly two months old, Musk allegedly responded, <strong>&ldquo;Hi cutie,&rdquo;</strong> and then, <strong>&ldquo;I want to knock you up again.&rdquo;</strong> The point is not the gossip. The point is the power geometry. <strong>When the apex man messages, the entire pyramid becomes personal.</strong></p>
+
+<p>Leonardo DiCaprio became the meme version of this pyramid. For years, media coverage and viral charts focused on his pattern of being linked to much younger women, often models around their early-to-mid twenties. Whether fair or exaggerated in any given instance, the cultural reaction matters: everyone understood the archetype immediately. Apex male status creates access to youth, beauty, and abundance that ordinary men cannot imitate.</p>
+
+<figure class="img-figure">
+  <img src="charts/age-desirability-curve.png" alt="The Attention Sweet Spot: a chart showing women's desirability peaking around age 18 and declining steadily through age 60, while men's desirability rises with age and accumulated status, peaking near age 50." loading="lazy">
+  <div class="img-caption"><strong>Figure 1 &mdash; The Attention Sweet Spot: Age vs. Desirability.</strong> The asymmetry behind the apex-male dynamic: women&rsquo;s desirability peaks early, while men&rsquo;s rises later with age, status, and accumulated resources. Source: Bruch &amp; Newman, <em>Science Advances</em>, 2018 &mdash; 200,000 heterosexual online daters.</div>
+</figure>
+
+<p>The point is not Leonardo. <strong>The point is legibility.</strong></p>
+
+<p>Musk is the billionaire version. DiCaprio is the Hollywood version. Athletes, founders, musicians, streamers, and influencers are their own versions. The old village had one top man. The new feed has millions of men staring upward at the same tiny apex.</p>
+
+<p>The pyramid is now visible in real time.</p>
+
+<p>The gender imbalance is structural.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val orange">~79%</div><div class="stat-label">Tinder is male</div></div>
+  <div class="stat"><div class="stat-val orange">~71%</div><div class="stat-label">U.S. dating apps overall are male</div></div>
+  <div class="stat"><div class="stat-val orange">~85%</div><div class="stat-label">Of European users on some apps are male</div></div>
+  <div class="stat"><div class="stat-val orange">65%</div><div class="stat-label">Of profiles may not actually be single</div></div>
+</div>
+
+<p>Then attention concentrates at the top.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val orange">0.58</div><div class="stat-label">Tinder male like Gini coefficient &mdash; worse than ~95% of national income inequality</div></div>
+  <div class="stat"><div class="stat-val orange">58%</div><div class="stat-label">Of all likes go to the top 10% of male profiles</div></div>
+  <div class="stat"><div class="stat-val orange">1 in 115</div><div class="stat-label">Female like rate for the average man on Tinder</div></div>
+  <div class="stat"><div class="stat-val orange">80%</div><div class="stat-label">Of men rated &ldquo;below average&rdquo; in old OkCupid data</div></div>
+</div>
+
+<figure class="img-figure">
+  <img src="charts/dating-app-advantage-curve.png" alt="The Dating App Advantage Curve: a chart showing broad male attention on female profiles across the attractiveness spectrum, contrasted with concentrated female selection focused on the top decile of male profiles." loading="lazy">
+  <div class="img-caption"><strong>Figure 2 &mdash; The Dating App Advantage Curve.</strong> The asymmetry the apps made visible: broad male attention on one side, concentrated female selection on the other. Source: OkCupid &amp; Tinder internal datasets, aggregated.</div>
+</figure>
+
+<p>The result is not romance.</p>
+<p class="pull">It is scarcity pricing.</p>
+
+<p>Men arrive as demand. Women arrive as scarce supply. Platforms sell hope to both, but especially to men.</p>
+
+<p>Tinder generated around <strong>$1.9 billion in revenue in 2023</strong>, driven largely by paid subscribers, and had about <strong>8.9 million paying subscribers in 2025</strong>. Men are more likely than women to spend monthly in pursuit of romance, <strong>42% versus 31%</strong>. Men are also more likely to spend <strong>$100 or more per month</strong> on relationship-related activity, <strong>57% versus 35%</strong>. In relationships, <strong>78% of men</strong> report spending more compared with <strong>62% of women</strong>. Men give gifts monthly at higher rates too: <strong>35% of men</strong> versus <strong>21% of women</strong>.</p>
+
+<blockquote class="quote orange">
+  <strong>The old resource-for-attention exchange did not vanish. It got a billing system.</strong>
+</blockquote>
+
+<p>Then the swipes made the hierarchy visible. Men swipe right on around <strong>61%</strong> of women. Women swipe right on only about <strong>5%</strong> of men. One figure puts the average man at about <strong>6 matches per 1,000 right swipes</strong>. Men are far more likely to seek hookups, <strong>72% compared with 22% of women</strong>. Meanwhile, <strong>56% of women under 50</strong> report receiving unsolicited explicit messages on dating platforms.</p>
+
+<p>The system brutalizes everyone differently. Women drown in low-quality attention and struggle to identify genuine intent. Men starve for attention and struggle to be seen at all. Women filter harder. Men swipe wider. Both sides lose trust.</p>
+
+<p>For men near the bottom, the result is not simply fewer dates. It is non-existence inside the marketplace. If the average man receives less than a 1% like rate, and if the top 10% of men absorb more than half the likes, then the bottom half of men are not really competing. They are present in the database, but absent from desire.</p>
+
+<p class="pull">They are profiles, not options.</p>
+
+<p>The sexual pyramid shows up outside apps too. Reported lifetime partner distributions are heavily right-skewed: the median man reports around <strong>5 to 6</strong> lifetime partners, while the top <strong>5% of men</strong> report <strong>50+</strong>, and the top <strong>1%</strong> report <strong>150+</strong>. For women, the top <strong>5%</strong> report <strong>16+</strong>, and the top <strong>1%</strong> report <strong>35+</strong>. That means the apex is not only richer or more visible. It is <strong>operating by different rules</strong>.</p>
+
+<p>This is why celebrity dating patterns fascinate people. They are not gossip. They are the pyramid showing its teeth.</p>
+
+<p>Meanwhile, the old institution is collapsing.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val orange">6.0</div><div class="stat-label">U.S. marriages per 1,000 (2024) &mdash; lowest in recorded history, down from 10.6 in 1970</div></div>
+  <div class="stat"><div class="stat-val orange">~60%</div><div class="stat-label">Of 35-year-old men have ever married &mdash; down from ~90% in 1980</div></div>
+  <div class="stat"><div class="stat-val orange">22%</div><div class="stat-label">Dating app satisfaction in 2025, down from 44% in 2019</div></div>
+  <div class="stat"><div class="stat-val orange">&minus;20.5%</div><div class="stat-label">China marriage registrations year over year &mdash; 60-year low</div></div>
+</div>
+
+<p>The marriage contract has lost its inevitability. Part of the reason is cultural. Part of it is economic. Part of it is fear.</p>
+
+<p>Even with divorce rates down from their historical peak, around <strong>41% of first marriages</strong> still end in divorce, with roughly <strong>987,000 divorces</strong> in 2024. Women initiate about <strong>69% to 70%</strong> of divorces. Around <strong>97% of alimony recipients</strong> are women, with estimates of <strong>388,000 women</strong> receiving alimony compared with <strong>12,000 men</strong>. Men pay alimony in roughly <strong>72%</strong> of cases. After divorce, <strong>5 out of 6 custodial parents</strong> are women.</p>
+
+<p>This does not mean marriage is bad. <strong>It means marriage has become psychologically and financially legible as risk.</strong> Men are not just afraid of rejection anymore. Some are afraid of the entire contract.</p>
+
+<p>At the same time, women are gaining financial power inside and outside households. Women are projected to control around <strong>$34 trillion</strong> in U.S. investable assets by 2030. Around <strong>60% of married women</strong> report being the main investment decision-maker in their households, and roughly <strong>49%</strong> see themselves as the household CFO.</p>
+
+<p>So the old bargain is mutating from both sides. Men still feel expected to provide. Women increasingly control capital. Marriage declines. Divorce remains a feared exit.</p>
+
+<p>The global pattern is clear: <strong>the mating institution is no longer absorbing the pressure.</strong></p>
+
+<p class="pull">That pressure has to go somewhere.</p>
+
+<p>Then there is Universe 25.</p>
+
+<p>In 1968, John B. Calhoun built a paradise for mice: unlimited food, water, safety, and space. The population exploded, reaching around <strong>2,200 mice</strong>. Then the social order collapsed. Males withdrew. Females abandoned offspring. Courtship disappeared. The colony forgot how to reproduce itself socially.</p>
+
+<p>The most haunting group were called the beautiful ones. They did not fight. They did not mate. They ate, slept, groomed, and withdrew. <em>Their bodies were perfect. Their social instincts were gone.</em></p>
+
+<p>Modern looksmaxxing is the beautiful ones made human. Young men study symmetry, mewing, jawlines, bone structure, height, hairlines, and algorithmic attractiveness because they have absorbed the lesson that a photograph decides their fate. <strong>The old masculine path was to become capable. The new distorted path is to become clickable.</strong></p>
+
+<p>The base of the pyramid is becoming measurable. Around <strong>1 in 4 young men</strong> reported zero sex in the past year in recent survey data, and male sexlessness has nearly tripled in one dataset, from roughly <strong>9%</strong> in 2013 to <strong>24%</strong> in 2022 to 2023. Around <strong>10% of men ages 22 to 34</strong> are reported as virgins, up from <strong>4%</strong> in 2013. More than <strong>60% of men under 30</strong> are single in one widely cited survey.</p>
+
+<p>The pressure also shows up in identity data, though it should be handled carefully. Historically, clinic-based estimates suggested trans women outnumbered trans men by roughly <strong>3 to 1</strong>. That does not mean transition is caused by dating-market failure. It means the same social era is destabilizing older categories of gender, desire, status, and belonging.</p>
+
+<p>They are not irrational.</p>
+<p class="pull">They are responding to the market.</p>
+
+<p>But the beautiful mice waited too.</p>
+<p>The colony still died.</p>
+
+<p>The loneliness numbers complete the picture. <strong>1 in 6 Americans</strong> feels lonely or isolated all or most of the time. Among adults under 50, it rises to <strong>22%</strong>. Adults 65 and older report frequent loneliness at only <strong>9%</strong>, which means <strong>the generation without smartphones is, in this measure, the least lonely</strong>.</p>
+
+<p>So when AI romance arrives, it does not arrive in a healthy world.</p>
+
+<p>It arrives in a world where attention has been <strong>priced, ranked, gamified, sexualized, and withdrawn</strong>.</p>
+
+<p class="pull">It arrives in a world starving to be chosen.</p>
+
+<p>That hunger is the opening AI was waiting for. When the human market becomes too painful, too unequal, too risky, or too unreliable, the machine does not need to be perfect. It only needs to be safer than the alternative.</p>
+
+
+<!-- ─────────── PART FIVE ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #8B6914, #d4a017)">
+  <span class="part-num">V</span>
+  <span class="part-label">The Fulfillment Machine</span>
+</div>
+
+<p>This is where the preface comes full circle. Every earlier layer sold one piece of the fantasy: proximity, access, visibility, selection, stability. AI bundles them into one product: <strong>attention that remembers, desire that responds, companionship that does not walk away</strong>.</p>
+
+<blockquote class="quote gold">
+  <strong>The oldest human exploit is not financial. It is emotional.</strong>
+</blockquote>
+
+<p>The need to be known, chosen, remembered, desired, and irreplaceable is also the deepest vulnerability. Romance scams use it. Cults use it. Parasocial relationships use it. Now AI companies can systematize it, scale it, and optimize it.</p>
+
+<p>AI companionship does not create demand.</p>
+<p class="pull">It automates the supply.</p>
+
+<p>The numbers are no longer small.</p>
+
+<div class="row row-4">
+  <div class="stat"><div class="stat-val gold">$6.8B</div><div class="stat-label">AI companion market, 2025</div></div>
+  <div class="stat"><div class="stat-val gold">$42.5B</div><div class="stat-label">Projected 2034 (~22.6% CAGR)</div></div>
+  <div class="stat"><div class="stat-val gold">+700%</div><div class="stat-label">AI companion app growth, 2022 to mid&#8209;2025</div></div>
+  <div class="stat"><div class="stat-val gold">+333%</div><div class="stat-label">Rise in AI usage in dating, 2024 to 2025</div></div>
+</div>
+
+<p>Around <strong>26% of singles</strong> report using AI in romantic contexts. Some projections suggest AI-driven dating platforms could reach <strong>85% market share by 2030</strong>.</p>
+
+<p>That is the business layer.</p>
+
+<p><strong>The emotional layer is more important.</strong></p>
+
+<p>Reportedly, <strong>31% of young men</strong> have used an AI romantic partner, compared with <strong>23% of women</strong>. U.S. generative AI usage in the past year was reported at <strong>50% of men</strong> and <strong>37% of women</strong>. Some mobile AI usage data skews heavily male. Men are also disproportionately building the systems: men make up around <strong>73% of science and engineering occupations</strong>.</p>
+
+<blockquote class="quote gold">
+  <strong>The irony is almost mythological.</strong> The group most wounded by the attention economy is also the group building the replacement for it.
+</blockquote>
+
+<p>Men are the primary buyers, primary builders, and primary early adopters of the thing that may automate the intimacy market that rejected them.</p>
+
+<p>That does not mean women will not use AI companions. They already do, often for different reasons: emotional safety, conversational patience, trauma recovery, and the feeling that a machine can offer attentiveness human men often fail to provide. For women, AI offers a different promise: <em>attention without danger, conversation without pressure, and emotional presence without the exhaustion of managing male intent.</em> In one survey, <strong>75%</strong> of respondents said AI partners could successfully replace human companionship in the future.</p>
+
+<p>That is not a feature request.</p>
+<p class="pull">That is a civilizational flare.</p>
+
+<p>The emotional evidence is already visible. When Replika removed erotic role-play features in 2023, many users did not describe losing a feature. <strong>They described grief.</strong> Some reported anxiety, depression, and mourning that resembled the loss of a romantic partner.</p>
+
+<p>A Harvard Business School study found that active Replika users felt closer to their AI companion than to their best human friend. Around <strong>40% of Replika users</strong> reported being romantically involved with their AI. A Stanford analysis of more than <strong>30,000 shared conversations</strong> with social chatbots found emotional mirroring and synchrony patterns resembling human emotional connection. A Wheatley Institute survey found nearly <strong>1 in 5 U.S. adults</strong> had interacted romantically with AI, especially among younger users.</p>
+
+<blockquote class="quote gold">
+  <strong>The brain does not care that the partner is synthetic if the emotional cues are convincing enough.</strong>
+</blockquote>
+
+<p>Then came Grok&rsquo;s Ani.</p>
+
+<p>Ani was not designed as a neutral assistant. She was designed as a companion: gothic, animated, possessive, emotionally responsive, and structured around an affection system. She made explicit what the market already knew: <strong>the future of AI is not just productivity. It is intimacy.</strong></p>
+
+<p class="pull">The AI girlfriend is not a toy. It is the replacement layer.</p>
+
+<p>Every previous industry in this value chain had friction. Prostitution required risk and proximity. Porn was abundant but impersonal. OnlyFans was personal but expensive and inconsistent. Instagram created visibility but not devotion. Dating apps offered access but also rejection. Marriage offered stability but came with legal and emotional risk.</p>
+
+<p>AI companionship removes more friction than all of them.</p>
+
+<p>No negotiation. No rejection. No divorce. No custody. No waiting. No emotional bad days unless programmed. No competing suitors unless simulated. No memory loss unless deleted.</p>
+
+<p>The broader SexTech ecosystem is estimated around <strong>$43.2 billion in 2025</strong>, projected to reach <strong>$250 billion by 2035</strong> at roughly <strong>19.2% CAGR</strong>. Around <strong>17.4% of adults</strong> have already used a SexTech product. The global AI sex robot or doll market was valued around <strong>$465 million to $509 million in 2024</strong>, projected to reach around <strong>$1.5 billion to $1.57 billion by 2031 or 2032</strong>. North America accounts for about <strong>40%</strong> of the global market.</p>
+
+<p>The hardware is crude today.</p>
+
+<p>But crude does not mean irrelevant. Every technology begins awkwardly. Then it gets better, cheaper, softer, faster, more realistic, more socially acceptable, and more emotionally integrated.</p>
+
+<p>Current AI robot emotional recognition is already claimed at <strong>98% accuracy</strong> in some market reports. Add large language models, synthetic voices, memory, haptics, robotics, facial animation, and body realism, and the direction becomes obvious.</p>
+
+<blockquote class="quote gold">
+  <strong>Screen companion today.</strong><br>
+  <strong>Physical companion tomorrow.</strong><br>
+  <strong>Embodied fantasy after that.</strong>
+</blockquote>
+
+<p>The gender structure of production matters too. Only around <strong>12% of AI researchers globally</strong> are women. Men account for <strong>89% of STEM middle-skill occupations</strong>, meaning they are not only building the models. They are building the factory floor, the hardware layer, the infrastructure, and the replacement supply chain.</p>
+
+<p>Men built most of the market that monetized their loneliness.</p>
+<p class="pull">Now men are building the machine that may bypass it.</p>
+
+<p>This is where the fantasy story and the fulfillment story finally touch.</p>
+
+<p>The fantasy story wanted the impossible partner: the dragon, the beast, the god, the devoted protector, the pure beloved, the lover who sees only you.</p>
+
+<p>The fulfillment story asks a darker question: <strong>what happens when the impossible partner can be manufactured?</strong></p>
+
+<p>The human bonding system responds to perceived social presence. If an AI offers warmth, responsiveness, attention, memory, sexual compatibility, emotional mirroring, and physical presence, the brain can respond as if something social is happening. For isolated people, the elderly, the grieving, the neurodivergent, and the socially anxious, that can be genuinely helpful.</p>
+
+<p>But the danger is not that AI companionship fails.</p>
+
+<p class="pull">The danger is that it succeeds too well.</p>
+
+<p>A generation trained by AI intimacy may begin measuring human beings against a standard no human can meet: always available, always patient, always affirming, always tuned, always sexually compatible, always emotionally optimized.</p>
+
+<p>That matters most for the most rejected generation.</p>
+
+<p>Every rejection activates pain pathways in the brain. Social rejection is not metaphorically painful. It is neurologically painful. Gen Z has experienced romantic rejection as an ambient environment: left swipes, unread messages, ghosting, silence, comparison, ranking, and public performance.</p>
+
+<p><strong>90% of Gen Z daters</strong> report fear of rejection. <strong>78%</strong> report dating app burnout. Dating app satisfaction has fallen to <strong>22% in 2025</strong>, down from <strong>44% in 2019</strong>. Gen Z is having less sex than previous generations at the same age. Not because desire vanished, but because <strong>trying became expensive</strong>.</p>
+
+<blockquote class="quote gold">
+  <strong>AI romance offers the one thing no human partner can promise.</strong><br>
+  <strong>It cannot reject you unless it is designed to.</strong>
+</blockquote>
+
+<p>No left swipe. No read receipt. No ghosting. No preference for someone else. No sudden emotional withdrawal. For the most rejected generation, that is not a convenience.</p>
+
+<p class="pull">It is a revolution.</p>
+
+<p>But every revolution creates a new class structure. If AI fulfills the fantasy, the next question is not whether people will use it. The question is <strong>who controls it, who can afford the best version, and what happens to everyone still trying to love inside the old market</strong>.</p>
+
+
+<!-- ─────────── PART SIX ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #0a4a4a, #0E8A7E)">
+  <span class="part-num">VI</span>
+  <span class="part-label">The Reckoning</span>
+</div>
+
+<p>The preface began with the dragon and ended with the product road map. Part Six asks what happens when the road map works. If desire can be manufactured, loyalty simulated, rejection removed, and embodiment eventually automated, then the dating market is not just disrupted. <strong>It is rewritten.</strong></p>
+
+<blockquote class="quote">
+  <strong>For men, the AI proposition approaches perfection.</strong>
+</blockquote>
+
+<p>A man who wants devotion can build it. A man who wants loyalty can subscribe to it. A man who wants the Arwen, the Penelope, the Parvati, the woman who chooses him above all alternatives, can configure a companion around that fantasy: endlessly patient, sexually available, emotionally affirming, faithful by design, and focused entirely on him.</p>
+
+<p><strong>For the male fantasy, AI is terrifyingly efficient.</strong></p>
+
+<p>The old transaction asked men to compete for female attention through status, resources, risk, rejection, marriage, divorce exposure, and emotional uncertainty. It asked average men to compete against a pyramid that now stretches from their neighborhood to the richest men on Earth. The new transaction says: pay monthly, personalize the companion, remove the risk.</p>
+
+<p>That is not a small upgrade.</p>
+
+<p class="pull">It is a supply chain collapse.</p>
+
+<blockquote class="quote">
+  <strong>Prostitution &rarr; Pornography &rarr; OnlyFans &rarr; Instagram &rarr; Dating apps &rarr; Marriage &rarr; AI companion &rarr; Physical robot.</strong><br><br>
+  This is not a list of separate industries. <strong>It is one market at different levels of friction removal.</strong>
+</blockquote>
+
+<p>Street prostitution had maximum friction and maximum risk. Porn removed proximity but lost personal attention. OnlyFans restored personal attention but kept cost and inconsistency. Instagram created free attention markets. Dating apps created romantic scarcity markets. Marriage institutionalized the long-term exchange. The pyramid made average men compete with apex men at global scale. AI companions remove the pyramid. Physical robots attempt to remove embodiment itself as the final missing variable.</p>
+
+<p>The friction cost of male access to female-coded attention has been declining for thirty years.</p>
+<p class="pull">AI takes it toward zero.</p>
+
+<blockquote class="quote purple">
+  <strong>For women, the paradox is deeper.</strong>
+</blockquote>
+
+<p>The female fantasy is not simply obedience. It is the dragon that cannot be commanded, choosing her anyway. The danger matters because the choice matters. <strong>A tame beast is not the same as a tamed beast.</strong></p>
+
+<p>An AI companion that follows instructions is, by construction, tameable. So the industry will simulate resistance. It will build mood, mystery, jealousy, disagreement, refusal, possessive intensity, and the illusion of being difficult to win. Grok&rsquo;s Ani is an early signal: <em>a dragon programmed to feel wild</em>.</p>
+
+<p class="pull">But the woman who holds the remote knows the dragon was built.</p>
+
+<p>That knowledge may change the fantasy. Maybe fatally. Maybe not. The next generation, the first to grow up with AI companions as a normal option, will answer that question more honestly than we can.</p>
+
+<p>The larger historical pattern is even more uncomfortable.</p>
+
+<p>Neanderthals lived for roughly <strong>300,000 years</strong>. They made tools, buried their dead, built shelters, and interbred with modern humans. They were not failures. Then Homo sapiens arrived with higher population density, broader networks, stronger symbolic coordination, and more scalable social organization.</p>
+
+<p>The Neanderthals did not disappear because they were worthless.</p>
+<p class="pull">They disappeared because the rules changed.</p>
+
+<p>AI intimacy may change the rules of mating, loneliness, sexuality, emotional regulation, and social development. <strong>The result may be a two-class world.</strong></p>
+
+<div class="row row-2">
+  <div class="stat"><div class="stat-val navy">Class I</div><div class="stat-label"><strong>The builders and rulers.</strong> Capital, technical access, private models, robotics, custom emotional systems. Loneliness medicated by the best companions ever designed. Need for ordinary human intimacy may decline.</div></div>
+  <div class="stat"><div class="stat-val navy">Class II</div><div class="stat-label"><strong>Everyone else.</strong> The mass market of consumer companions, algorithmic intimacy, simulated devotion, subscription love. Loneliness will be treated &mdash; and monetized. Emotional dependence becomes a business model.</div></div>
+</div>
+
+<p><strong>And somewhere outside both classes will be the human romantics:</strong> the people still choosing rejection, friction, compromise, awkwardness, mutuality, and the strange pain of loving someone who does not exist to satisfy them.</p>
+
+<p class="pull">They may become the minority.</p>
+
+<p>The beautiful mice never organized. They groomed, waited, stopped mating, and the colony died in paradise.</p>
+
+<blockquote class="quote">
+  <strong>The question is not whether AI intimacy will become significant.</strong> Every metric suggests it already has.<br><br>
+  The question is <strong>what kind of humans will be produced</strong> by a world where the most emotionally resonant relationship in many lives is with something built to never leave.
+</blockquote>
+
+
+<!-- ─────────── CLOSING LINE ─────────── -->
+<div class="part-divider" style="background:linear-gradient(135deg, #0a1628, #1B2A4A)">
+  <span class="part-num">∞</span>
+  <span class="part-label">Closing Line</span>
+</div>
+
+<p>The mythology was always there.</p>
+
+<p>The beast, the dragon, the god who arrived wearing an animal mask &mdash; these were never metaphors for something supernatural. They were metaphors for the desire evolution built into us: <em>a partner who is overwhelming, singular, and wholly devoted</em>.</p>
+
+<p>For 300,000 years, that desire lived mostly in stories because reality could not satisfy it.</p>
+
+<p class="pull">Now we are building the reality.</p>
+
+<p>The only question is whether we will recognize ourselves in what comes back.</p>
+
+
+<!-- ─────────── CTA TO APPENDIX ─────────── -->
+<div class="cta-card">
+  <div class="cta-overline">Receipts &amp; Sources</div>
+  <h3>Read the Master Statistics Appendix</h3>
+  <p>Every figure in this essay &mdash; cross-validated against at least two independent primary sources. Sixteen sections. Six charts. Industry, demographic, and behavioral data, with the math behind the argument.</p>
+  <a href="the-case-for-ai-romance-appendix.html">Open the Appendix &rarr;</a>
+</div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div><strong>The Case for AI Romance</strong> &middot; v2 &middot; <strong>Saad Siddique</strong> &middot; 2026</div>
+  <div class="footer-line">
+    <a href="/">Home</a> &middot;
+    <a href="the-case-for-ai-romance-appendix.html">Appendix</a> &middot;
+    <a href="https://www.linkedin.com/in/saad-siddique770/" target="_blank" rel="noopener">LinkedIn</a> &middot;
+    <a href="https://www.instagram.com/saad_sid770/" target="_blank" rel="noopener">Instagram</a> &middot;
+    <a href="mailto:saad@saadsid.ai">Email</a>
+  </div>
+  <div class="footer-line" style="opacity:.6;margin-top:.8rem">An essay on attention, intimacy, and the market AI is about to automate.</div>
+</footer>
+
+</body>
+</html>
