@@ -1,6 +1,6 @@
 # saadsid.ai
 
-The personal site of [Saad Siddique](https://github.com/saad770) — AI strategy, frontier
+The personal site of [Saad](https://github.com/saad770) — AI strategy, frontier
 transformation, and design systems.
 
 🌐 **Live:** [saadsid.ai](https://saadsid.ai)
@@ -58,4 +58,4 @@ git push
 
 ## License
 
-Content © Saad Siddique. Code under [MIT](LICENSE).
+Content © Saad. Code under [MIT](LICENSE).
