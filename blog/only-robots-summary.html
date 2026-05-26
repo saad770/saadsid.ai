@@ -231,20 +231,20 @@
   .callout p:last-child{margin:0}
   .callout strong{color:var(--blue);font-weight:600}
 
-  /* ---- big square CTA grid (two cards) ---- */
+  /* ---- rectangular CTA grid (essay primary, appendix secondary) ---- */
   .cta-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.55fr 1fr;
     gap:18px;
     margin:72px 0 24px;
+    align-items:stretch;
   }
-  .cta-square{
+  .cta-card{
     position:relative;
-    aspect-ratio:1/1;
     background:var(--paper-2);
     border:1px solid var(--blue-rule);
     border-radius:14px;
-    padding:30px;
+    padding:34px 32px;
     display:flex;
     flex-direction:column;
     text-decoration:none;
@@ -252,7 +252,7 @@
     transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
     overflow:hidden;
   }
-  .cta-square::after{
+  .cta-card::after{
     content:"";
     position:absolute;
     inset:0;
@@ -260,13 +260,13 @@
     pointer-events:none;
     background:linear-gradient(135deg, rgba(30,58,138,.02) 0%, rgba(30,58,138,.06) 100%);
   }
-  .cta-square:hover{
+  .cta-card:hover{
     background:var(--blue-tint);
     border-color:var(--blue-2);
     transform:translateY(-3px);
     box-shadow:0 18px 40px -22px rgba(15,23,42,.45);
   }
-  .cta-square .cta-label{
+  .cta-card .cta-label{
     font-family:var(--sans);
     font-size:11.5px;
     letter-spacing:.22em;
@@ -276,39 +276,81 @@
     margin-bottom:12px;
     position:relative;z-index:1;
   }
-  .cta-square h3{
+  .cta-card h3{
     font-family:var(--serif);
-    font-size:1.55rem;
     font-weight:600;
-    line-height:1.22;
+    line-height:1.18;
     color:var(--ink);
     margin:0 0 12px;
     letter-spacing:-.005em;
     position:relative;z-index:1;
   }
-  .cta-square p{
+  .cta-card .cta-blurb{
     font-family:var(--serif);
-    font-size:1rem;
     line-height:1.55;
     color:var(--ink-soft);
     margin:0;
-    flex-grow:1;
     position:relative;z-index:1;
   }
-  .cta-square .cta-arrow{
+  .cta-card .cta-arrow{
     font-family:var(--sans);
     font-size:14px;
     font-weight:600;
     color:var(--blue);
-    margin-top:20px;
+    margin-top:auto;
+    padding-top:22px;
     position:relative;z-index:1;
     transition:transform .18s ease;
   }
-  .cta-square:hover .cta-arrow{transform:translateX(4px); color:var(--blue-2)}
+  .cta-card:hover .cta-arrow{transform:translateX(4px); color:var(--blue-2)}
+
+  /* primary card (full essay) */
+  .cta-primary{padding:36px 34px}
+  .cta-primary h3{font-size:2.05rem; margin-bottom:14px; letter-spacing:-.01em}
+  .cta-primary .cta-blurb{font-size:1.05rem; margin-bottom:24px}
+  .cta-primary .cta-toc{
+    list-style:none;
+    margin:0 0 4px;
+    padding:20px 0 4px;
+    border-top:1px solid var(--blue-rule);
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    column-gap:28px;
+    row-gap:10px;
+    position:relative;z-index:1;
+  }
+  .cta-primary .cta-toc li{
+    font-family:var(--serif);
+    font-size:.97rem;
+    color:var(--ink);
+    line-height:1.35;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .cta-primary .cta-toc .num{
+    font-family:var(--sans);
+    font-size:10.5px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+    flex:0 0 auto;
+    min-width:22px;
+  }
+  .cta-primary .cta-toc .ch{flex:1; color:var(--ink)}
+
+  /* secondary card (appendix) */
+  .cta-secondary h3{font-size:1.4rem}
+  .cta-secondary .cta-blurb{font-size:.99rem}
+
   @media (max-width:640px){
     .cta-grid{grid-template-columns:1fr; gap:14px; margin:56px 0 16px}
-    .cta-square{aspect-ratio:auto; min-height:220px; padding:26px}
-    .cta-square h3{font-size:1.35rem}
+    .cta-card{padding:26px}
+    .cta-primary{padding:28px 26px}
+    .cta-primary h3{font-size:1.6rem}
+    .cta-primary .cta-toc{grid-template-columns:1fr; column-gap:0; row-gap:8px; padding-top:16px}
+    .cta-primary .cta-blurb{font-size:1rem}
   }
 
   /* end mark */
@@ -566,18 +608,26 @@
 
     <div class="end-mark">End of preface</div>
 
-    <!-- =================== TWO BIG SQUARE CTAs =================== -->
+    <!-- =================== TWO RECTANGULAR CTAs (essay primary, appendix secondary) =================== -->
     <div class="cta-grid">
-      <a class="cta-square" href="only-robots.html">
-        <div class="cta-label">The full essay</div>
+      <a class="cta-card cta-primary" href="only-robots.html">
+        <div class="cta-label">The full essay &middot; ~ 30 min read</div>
         <h3>Only Robots</h3>
-        <p>The complete six-part argument &mdash; from the dragon on the bestseller list to the AI companion road map. ~ 30 min read.</p>
-        <div class="cta-arrow">Read the essay &rarr;</div>
+        <p class="cta-blurb">The complete six-part argument &mdash; from the dragon on the bestseller list to the AI companion road map. The architecture of attention, and a reckoning with the machine being built to satisfy a 300,000-year-old desire.</p>
+        <ul class="cta-toc">
+          <li><span class="num">I</span><span class="ch">The Dragon on the Bestseller List</span></li>
+          <li><span class="num">II</span><span class="ch">The Oldest Market</span></li>
+          <li><span class="num">III</span><span class="ch">The Body Goes Digital</span></li>
+          <li><span class="num">IV</span><span class="ch">The Distribution Network</span></li>
+          <li><span class="num">V</span><span class="ch">The Fulfillment Machine</span></li>
+          <li><span class="num">VI</span><span class="ch">The Reckoning</span></li>
+        </ul>
+        <div class="cta-arrow">Now read the whole article &rarr;</div>
       </a>
-      <a class="cta-square" href="only-robots-appendix.html">
+      <a class="cta-card cta-secondary" href="only-robots-appendix.html">
         <div class="cta-label">The data</div>
         <h3>Master Statistics Appendix</h3>
-        <p>Every figure in this preface and the full essay, cross-verified against at least two independent primary sources. Sixteen sections.</p>
+        <p class="cta-blurb">Every figure in this preface and the full essay, cross-verified against at least two independent primary sources. Sixteen sections, six charts.</p>
         <div class="cta-arrow">Open the appendix &rarr;</div>
       </a>
     </div>
