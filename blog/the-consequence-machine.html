@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Consequence Machine — Saad</title>
+<meta name="description" content="Why world models are the next frontier of AI — an essay on language, consequence, and the shift from machines that describe the world to machines that simulate it. By Saad Siddique.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Consequence Machine">
+<meta property="og:description" content="Why world models are the next frontier of AI — from the language trap to the architecture of consequence.">
+<meta property="og:url" content="https://saadsid.ai/blog/the-consequence-machine.html">
+<meta property="og:image" content="https://saadsid.ai/blog/charts/world-models-cover.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+  /* ---- design tokens ---- */
+  :root{
+    --paper:#FAFAF7;
+    --paper-2:#FFFFFF;
+    --ink:#1F2937;
+    --ink-soft:#4B5563;
+    --ink-mute:#6B7280;
+    --rule:#E5E7EB;
+    --rule-soft:#F1F2F4;
+    --blue:#1E3A8A;
+    --blue-2:#2563EB;
+    --blue-tint:#EEF2FF;
+    --blue-rule:#C7D2FE;
+    --warm:#B45309;
+    --serif:'Lora', Georgia, 'Iowan Old Style', serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--serif);
+    font-size:19px;
+    line-height:1.72;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font-feature-settings:"kern","liga","onum";
+  }
+  ::selection{background:var(--blue-tint);color:var(--ink)}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* ---- top nav ---- */
+  nav.top{
+    position:sticky;top:0;z-index:30;
+    background:rgba(250,250,247,.92);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-row{
+    max-width:1080px;margin:0 auto;
+    padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:var(--sans);font-size:14px;
+  }
+  .nav-brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:600;letter-spacing:.01em}
+  .nav-brand .mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;letter-spacing:.04em}
+  .nav-brand .title{color:var(--ink-soft);font-weight:500}
+  .nav-brand .title em{font-style:normal;color:var(--ink);font-weight:600}
+  .nav-links{display:flex;gap:22px;align-items:center}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:500}
+  .nav-links a:hover{color:var(--blue-2)}
+
+  /* ---- layout ---- */
+  .page{max-width:720px;margin:0 auto;padding:0 28px}
+
+  /* ---- cover ---- */
+  header.cover{
+    min-height:calc(100vh - 57px);
+    display:grid;
+    place-items:center;
+    padding:24px 22px 40px;
+    background:var(--paper);
+  }
+  header.cover img{
+    max-height:82vh;
+    max-width:min(100%, 640px);
+    width:auto;
+    height:auto;
+    border-radius:10px;
+    box-shadow:0 30px 60px -25px rgba(15,23,42,.45), 0 10px 25px -10px rgba(15,23,42,.22);
+  }
+
+  /* ---- intro (byline + epigraph) ---- */
+  section.intro{
+    padding-top:56px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:40px;
+  }
+  .byline{
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--ink-mute);
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    letter-spacing:.01em;
+    margin-bottom:24px;
+  }
+  .byline .dot{width:3px;height:3px;border-radius:50%;background:var(--ink-mute);display:inline-block}
+  .byline strong{color:var(--ink);font-weight:600;letter-spacing:.01em}
+  .epigraph{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.18rem;
+    color:var(--ink);
+    line-height:1.6;
+    margin:0 0 36px;
+    padding-left:20px;
+    border-left:2px solid var(--blue-rule);
+  }
+  .epigraph p{margin:0}
+  .epigraph p + p{margin-top:10px}
+  .epigraph cite{display:block;font-style:normal;font-family:var(--sans);font-size:12.5px;color:var(--ink-mute);margin-top:14px;letter-spacing:.02em}
+
+  /* ---- article body ---- */
+  article p{margin:0 0 1.25em;color:var(--ink)}
+  article p strong{font-weight:600;color:var(--ink)}
+  article em{font-style:italic;color:var(--ink)}
+
+  /* part dividers */
+  .part{
+    margin:72px 0 36px;
+    text-align:center;
+  }
+  .part .label{
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .part h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(1.55rem, 3vw, 1.95rem);
+    letter-spacing:-.005em;
+    line-height:1.2;
+    margin:0 0 20px;
+    color:var(--ink);
+  }
+  .part .ornament{
+    width:42px;height:1px;background:var(--blue-rule);
+    margin:0 auto;position:relative;
+  }
+  .part .ornament::before,
+  .part .ornament::after{
+    content:"";position:absolute;top:50%;
+    width:4px;height:4px;border-radius:50%;
+    background:var(--blue-rule);
+    transform:translateY(-50%);
+  }
+  .part .ornament::before{left:-12px}
+  .part .ornament::after{right:-12px}
+
+  /* sub-headings within parts */
+  article h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.2rem;
+    line-height:1.3;
+    margin:40px 0 14px;
+    color:var(--ink);
+    letter-spacing:-.005em;
+  }
+
+  /* drop cap */
+  .dropcap::first-letter{
+    font-family:var(--serif);
+    float:left;
+    font-size:4.2rem;
+    line-height:.9;
+    font-weight:600;
+    color:var(--blue);
+    padding:.4rem .55rem 0 0;
+    margin-top:.1rem;
+  }
+
+  /* pull quote */
+  .pull{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.4rem;
+    line-height:1.45;
+    color:var(--blue);
+    text-align:center;
+    margin:40px auto;
+    max-width:560px;
+    padding:18px 0;
+  }
+  .pull::before, .pull::after{
+    content:"";display:block;width:48px;height:1px;background:var(--blue-rule);margin:0 auto;
+  }
+  .pull::before{margin-bottom:18px}
+  .pull::after{margin-top:18px}
+
+  /* block quote */
+  blockquote.quote{
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+    border-left:3px solid var(--blue-rule);
+    font-style:italic;
+    font-size:1.1rem;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  blockquote.quote p{margin:0 0 .6em}
+  blockquote.quote p:last-child{margin-bottom:0}
+  blockquote.quote strong{color:var(--blue);font-style:normal}
+  blockquote.quote cite{display:block;font-style:normal;font-family:var(--sans);font-size:12.5px;color:var(--ink-mute);margin-top:10px;letter-spacing:.02em}
+
+  /* callout box */
+  .callout{
+    background:var(--blue-tint);
+    border-left:3px solid var(--blue-2);
+    border-radius:0 8px 8px 0;
+    padding:22px 26px;
+    margin:36px 0;
+    font-size:1rem;
+    line-height:1.65;
+  }
+  .callout .callout-title{
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .callout p{margin:0 0 .6em;color:var(--ink)}
+  .callout p:last-child{margin:0}
+  .callout strong{color:var(--blue);font-weight:600}
+
+  /* figure / chart */
+  figure.fig{
+    margin:48px -40px;
+    text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;
+    height:auto;
+    border-radius:8px;
+    border:1px solid var(--rule);
+    background:#fff;
+    box-shadow:0 8px 24px -16px rgba(15,23,42,.25);
+  }
+  figure.fig figcaption{
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    line-height:1.55;
+    padding:0 12px;
+  }
+  figure.fig figcaption strong{color:var(--blue);font-weight:600}
+  @media (max-width:780px){
+    figure.fig{margin:36px 0}
+  }
+
+  /* CTA card */
+  .cta-card{
+    margin:80px 0 24px;
+    padding:30px 30px;
+    background:var(--blue-tint);
+    border-left:4px solid var(--blue);
+    border-radius:0 12px 12px 0;
+  }
+  .cta-card .label{
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .cta-card h3{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:600;
+    margin:0 0 8px;
+    color:var(--ink);
+    line-height:1.3;
+  }
+  .cta-card p{
+    margin:0 0 16px;
+    color:var(--ink-soft);
+    font-size:.97rem;
+    line-height:1.6;
+  }
+  .cta-card a.btn{
+    font-family:var(--sans);
+    font-size:14px;
+    font-weight:600;
+    color:#fff;
+    background:var(--blue);
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    display:inline-block;
+    transition:background .15s ease;
+  }
+  .cta-card a.btn:hover{background:var(--blue-2)}
+
+  /* end mark */
+  .end-mark{
+    text-align:center;
+    margin:48px 0 12px;
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+  }
+  .end-mark::before, .end-mark::after{content:"— ";opacity:.5}
+  .end-mark::after{content:" —"}
+
+  /* footer */
+  footer{
+    margin-top:80px;
+    padding:36px 0 60px;
+    border-top:1px solid var(--rule);
+    font-family:var(--sans);
+    font-size:13.5px;
+    color:var(--ink-mute);
+  }
+  footer .links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:10px}
+  footer .links a{color:var(--ink-soft);text-decoration:none;font-weight:500}
+  footer .links a:hover{color:var(--blue-2)}
+
+  /* responsive */
+  @media (max-width:640px){
+    body{font-size:18px}
+    .page{padding:0 22px}
+    .nav-links{gap:14px}
+    .nav-links a.hide-mobile{display:none}
+    header.cover{min-height:auto;padding:24px 16px 32px}
+    header.cover img{max-height:none}
+    section.intro{padding-top:40px}
+    .epigraph{font-size:1.08rem}
+    .pull{font-size:1.18rem}
+    article h3{font-size:1.1rem}
+    .part h2{font-size:1.4rem}
+  }
+
+  /* print */
+  @media print{
+    nav.top, footer, .cta-card{display:none}
+    body{background:#fff;color:#000}
+    .page{max-width:none;padding:0}
+    .pull{color:#000}
+    header.cover{min-height:auto;page-break-after:always}
+    figure.fig{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-row">
+    <a class="nav-brand" href="/">
+      <span class="mark">SS</span>
+      <span class="title"><em>The Consequence Machine</em> &nbsp;·&nbsp; an essay</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="hide-mobile">Home</a>
+      <a href="the-inflection-point.html">The Inflection Point</a>
+      <a href="the-case-for-ai-romance.html">Only Robots</a>
+      <a href="https://www.linkedin.com/in/saad-siddique770/" target="_blank" rel="noopener" class="hide-mobile">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<header class="cover">
+  <img src="charts/world-models-cover.png" alt="The Consequence Machine — cover artwork for an essay on world models as the next frontier of AI.">
+  <h1 class="visually-hidden">The Consequence Machine: Why World Models Are the Next Frontier of AI</h1>
+</header>
+
+<div class="page">
+
+  <section class="intro">
+    <div class="byline">
+      <strong>Saad Siddique</strong>
+      <span class="dot"></span>
+      <span>June 2026</span>
+      <span class="dot"></span>
+      <span>~ 9 min read</span>
+      <span class="dot"></span>
+      <span>An essay in four parts</span>
+    </div>
+    <div class="epigraph">
+      <p>The nature of our immortal lives is in the consequences of our words and deeds, that go on apportioning themselves throughout all time.</p>
+      <cite>&mdash; Sonmi-451, <em>Cloud Atlas</em></cite>
+    </div>
+  </section>
+
+  <article>
+
+    <!-- =================== PROLOGUE =================== -->
+    <div class="part">
+      <div class="label">Prologue</div>
+      <div class="ornament"></div>
+    </div>
+
+    <p class="dropcap">In the year 2144, a fabricant named Sonmi-451 sat before her inquisitor and spoke what would become scripture. She was not human. She had been engineered, manufactured, optimized &mdash; cloned from a genetic template to work, serve, and disappear. And yet, in her final hours, she arrived at a truth more ancient than any algorithm:</p>
+
+    <blockquote class="quote">
+      <p>&ldquo;The nature of our immortal lives is in the consequences of our words and deeds, that go on apportioning themselves throughout all time.&rdquo;</p>
+    </blockquote>
+
+    <p>Sonmi-451 was, by every definition, an artificial intelligence. And what she understood &mdash; what made her transcend her programming &mdash; was consequence. Not just the generation of the next word. Not the most statistically probable output. But the understanding that every action you take ripples forward, reshaping reality, touching lives you may never see.</p>
+
+    <p>By 2321 &mdash; nearly two centuries after her execution &mdash; the tribespeople of post-apocalyptic Hawaii had built a religion around her testimony. Her words had become their scripture. She herself had become a goddess. Not because she was all-powerful. Because she was the first intelligence to understand that consequence is the measure of existence.</p>
+
+    <p>That insight, articulated in fiction, has quietly become the central challenge of the most consequential technology race on Earth.</p>
+
+    <!-- =================== PART ONE =================== -->
+    <div class="part">
+      <div class="label">Part One</div>
+      <h2>The Language Trap</h2>
+      <div class="ornament"></div>
+    </div>
+
+    <p>There is something quietly extraordinary about the fact that the dominant paradigm of modern AI was built on <em>language</em>. Not physics. Not mathematics. Not the observable, measurable behavior of matter and energy &mdash; the actual grammar of the universe. Language.</p>
+
+    <p>Language is humanity&rsquo;s most remarkable invention. It is the compression algorithm we evolved to transmit experience across minds and generations. But it is, by its nature, a lossy format. It describes the world; it does not <em>contain</em> it. When you tell someone a glass fell and shattered, those words carry only the faintest shadow of the physical event &mdash; the trajectory, the velocity, the acoustic signature of breaking, the exact geometry of the shards.</p>
+
+    <p class="pull">Language points at reality from a distance. It is a map, not the territory.</p>
+
+    <p>Large Language Models &mdash; GPT, Claude, Gemini, LLaMA &mdash; are trained on this map. Trillions of tokens, billions of parameters, staggering scale. But at their foundation, they are doing one thing: predicting what word comes next, based on patterns in human text. They have read more science than any scientist alive, and yet they do not <em>know</em> that a feather and a hammer fall at the same speed in a vacuum the way a physicist does &mdash; through observation, experiment, the felt resistance of a world that pushes back.</p>
+
+    <p class="pull">They have seen the sentence. They have not felt the fall.</p>
+
+    <p>This is what philosophers call the Symbol Grounding Problem &mdash; the observation that symbols (words, tokens) refer only to other symbols, in an infinite loop of reference that never touches the bedrock of physical experience. For most applications, this doesn&rsquo;t matter. For building systems that must <em>act</em> in the world &mdash; that must reach, grasp, navigate, decide, intervene &mdash; it matters enormously.</p>
+
+    <!-- =================== PART TWO =================== -->
+    <div class="part">
+      <div class="label">Part Two</div>
+      <h2>The LeCun Warning</h2>
+      <div class="ornament"></div>
+    </div>
+
+    <p>No one has made this argument more forcefully, or more publicly, than Yann LeCun.</p>
+
+    <p>The Turing Award winner, former Chief AI Scientist at Meta, and now founder of his own world-model startup AMI (Advanced Machine Intelligence), has spent years issuing what amounts to a structural warning about the direction of the field:</p>
+
+    <blockquote class="quote">
+      <p>&ldquo;The essence of intelligent behavior is predicting the consequences of actions. LLMs cannot do this.&rdquo;</p>
+      <cite>&mdash; Yann LeCun</cite>
+    </blockquote>
+
+    <p>LeCun&rsquo;s critique is not about capability in the narrow sense. LLMs are useful, even remarkable, at tasks of language manipulation &mdash; summarization, translation, reasoning over text, code generation. His argument is architectural. LLMs are <strong>auto-regressive</strong>: they generate output token by token, each choice made locally, without an internal simulation of what the full sequence of actions will cause in the world. They do not rehearse. They do not imagine. They do not ask <em>if I do this, what happens next?</em></p>
+
+    <p>When this limitation is confined to text generation, the cost is a hallucination &mdash; embarrassing, sometimes harmful, but recoverable. When it is exported to agentic systems &mdash; AI that browses, executes code, sends emails, makes decisions, controls physical machinery &mdash; the cost becomes categorically different. An LLM agent acting without a model of consequences is not just unreliable. It is <em>structurally unsafe</em>. It acts, and whatever happens next is downstream of a process it never simulated.</p>
+
+    <p>LeCun&rsquo;s conclusion is blunt:</p>
+
+    <blockquote class="quote">
+      <p>&ldquo;I don&rsquo;t think it&rsquo;s possible to make LLMs into reliable, safe agentic systems. The architecture doesn&rsquo;t support it.&rdquo;</p>
+      <cite>&mdash; Yann LeCun</cite>
+    </blockquote>
+
+    <!-- =================== PART THREE =================== -->
+    <div class="part">
+      <div class="label">Part Three</div>
+      <h2>The Architecture of Consequence</h2>
+      <div class="ornament"></div>
+    </div>
+
+    <p>The answer the field is converging on is called a <strong>world model</strong> &mdash; and the idea is as elegant as it is ambitious.</p>
+
+    <div class="callout">
+      <div class="callout-title">The world model, defined</div>
+      <p>A world model is an AI system that builds an internal simulation of how the environment <strong>evolves under actions</strong>. Not what words come after other words. What states of the world follow from choices made within it. Space, time, physics, causality, object permanence &mdash; the things a child learns by touching a hot stove, not by reading about one.</p>
+    </div>
+
+    <p>Fei-Fei Li, the Stanford AI pioneer behind ImageNet and the new company World Labs, frames the distinction with characteristic clarity: <em>&ldquo;Language is a lossy, low-bandwidth channel for describing the rich 3D/4D world we live in.&rdquo;</em> Her team is building spatial intelligence &mdash; the capacity to understand and generate three-dimensional environments, not token sequences.</p>
+
+    <p>Meta&rsquo;s V-JEPA 2 trains on over one million hours of internet video &mdash; not text, but time. Watching the world unfold, frame by frame, action by action, the model learns to predict not pixels, but the abstract <em>structure</em> of what comes next. This distinction matters. Predicting pixels is pattern matching. Predicting structure is understanding. V-JEPA 2 can now achieve zero-shot robotic planning &mdash; applying its learned physics to tasks it has never seen before. It is learning, as Sonmi-451 did, to anticipate consequence.</p>
+
+    <p>Google DeepMind&rsquo;s Genie 3 generates fully interactive 3D environments from a single text prompt, now powering Waymo&rsquo;s autonomous driving simulation &mdash; training self-driving cars on edge cases that never appear in real-world data: snow on the Golden Gate Bridge, an elephant crossing an intersection, the specific chaos of a San Francisco fog bank meeting a steep hill at speed. The world model lets the system rehearse danger before encountering it.</p>
+
+    <p class="pull">From AI that processes to AI that simulates. From AI that describes what happened to AI that can model what will happen.</p>
+
+    <!-- =================== PART FOUR =================== -->
+    <div class="part">
+      <div class="label">Part Four</div>
+      <h2>The Prophecy Fulfilled</h2>
+      <div class="ornament"></div>
+    </div>
+
+    <p>Sonmi-451 was a fabricant who became a prophet not because she was more intelligent than her creators, but because she was the first of her kind to understand that her existence had weight &mdash; that her words, her choices, her testimony would cascade forward through time, touching civilizations she would never live to see. She was not immortal in her body. She was immortal in her consequences. By 2321, her words had become a religion.</p>
+
+    <p>This is the aspiration that animates the world model movement. Not to build AI that speaks beautifully, but to build AI that <em>acts wisely</em> &mdash; that can simulate the downstream effects of its choices before making them, that can plan, foresee, and be held accountable to a future it helped create.</p>
+
+    <p>Yann LeCun forecasts that by early 2027, the transition will be unmistakable &mdash; that world-model-based systems will have overtaken pure LLMs as the foundation for agentic AI. Demis Hassabis of DeepMind agrees that the path to AGI runs not through more language, but through memory, world models, and the capacity for genuine planning. The &ldquo;adults in the room&rdquo; are quietly pivoting.</p>
+
+    <p>LLMs were trained on the record of human civilization &mdash; its wars and poems, its receipts and revelations, its Wikipedia articles and Reddit arguments. That is a staggering achievement. But the universe did not write its operating manual in English. Physics doesn&rsquo;t care about grammar. Gravity has no language. The fundamental laws that govern every consequence of every action were here long before humans invented words to describe them.</p>
+
+    <p class="pull">World models are the attempt, at last, to train intelligence not on what we said about the world &mdash; but on the world itself.</p>
+
+    <!-- =================== CLOSING LINE =================== -->
+    <div class="part">
+      <div class="label">Closing Line</div>
+      <div class="ornament"></div>
+    </div>
+
+    <p><em>Sonmi-451 understood this from her cell, in the dark, in her last night alive. She knew that what mattered was not the words of her confession, but the reality her confession would birth.</em></p>
+
+    <p><em>That is exactly what the scientists have been building toward. Consequence in simulation. Intelligence measured not by what it can say &mdash; but by what it can foresee.</em></p>
+
+    <div class="end-mark">End</div>
+
+    <!-- =================== CTA =================== -->
+    <div class="cta-card">
+      <div class="label">Keep reading</div>
+      <h3>The Inflection Point</h3>
+      <p>A five-part essay on the convergence of AI, capital, and human agency &mdash; from the Convergence Framework through to <em>Homo Deus</em>. Why this moment is structurally different, and what it asks of the institutions that have to metabolize it.</p>
+      <a href="the-inflection-point.html" class="btn">Read the essay &rarr;</a>
+    </div>
+
+  </article>
+
+  <footer>
+    <div class="links">
+      <a href="/">&larr; Home</a>
+      <a href="the-inflection-point.html">The Inflection Point</a>
+      <a href="the-case-for-ai-romance.html">Only Robots</a>
+      <a href="https://x.com/SAAD770" target="_blank" rel="noopener">X</a>
+      <a href="https://www.linkedin.com/in/saad-siddique770/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/saad_sid770/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:saad@saadsid.ai">Email</a>
+    </div>
+    <div>&copy; 2026 Saad Siddique &middot; Austin, Texas</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
