@@ -77,15 +77,15 @@
 
   /* ---- cover ---- */
   header.cover{
-    display:grid;
-    place-items:center;
-    padding:28px 22px 8px;
+    max-width:720px;
+    margin:0 auto;
+    padding:28px 28px 4px;
     background:var(--paper);
   }
   header.cover img{
-    max-height:72vh;
-    max-width:min(100%, 640px);
-    width:auto;
+    display:block;
+    width:100%;
+    max-width:100%;
     height:auto;
     border-radius:10px;
     box-shadow:0 30px 60px -25px rgba(15,23,42,.45), 0 10px 25px -10px rgba(15,23,42,.22);
@@ -347,7 +347,7 @@
     .page{padding:0 22px}
     .nav-links{gap:14px}
     .nav-links a.hide-mobile{display:none}
-    header.cover{padding:20px 16px 4px}
+    header.cover{padding:20px 22px 4px}
     header.cover img{max-height:none}
     section.intro{padding-top:40px}
     .epigraph{font-size:1.08rem}
